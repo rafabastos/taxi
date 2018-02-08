@@ -1,0 +1,185 @@
+extends  ../_skeleton
+
+//- Includes
+
+block variables
+  - var activeIndex = 4
+  - var pageName = 'Blog Modern'
+
+block page
+  // Page Header
+  +breadcrumbs-header({ headerClass: 'breadcrumbs-background-03',
+    text: "Our News",
+    path: [[menu[activeIndex].title, menu[activeIndex].link], ['Modern blog']]
+  })
+
+  // Blog
+  section.section.section-xl.bg-gray-lighter
+    
+    .shell.shell-bigger
+      .range.range-ten.range-50.range-sm-90.range-sm-center.range-lg-justify
+        .cell-sm-9.cell-md-6.blog-modern-main.text-center
+          // Post modern
+          article.post-modern
+            .post-modern-aside
+              time(datetime='2017') Feb 27, 2017 at 5:47 pm 
+              figure.post-modern-avatar-wrap: +jpg('post-author-1-108x108', 'post-modern-avatar')
+              p.post-modern-author: a(href='single-post.html') Ronald Chen 
+              
+            .post-modern-main
+              a.post-modern-image(href=postLink): +jpg('blog-post-1-870x580')
+              .post-modern-body
+                h5.post-modern-title: a(href=postLink) Selecting a Taxi Service: What You Must  Know and Be Aware of
+                p A taxi is an essential component of the public transportation system. Whether you are calling a taxi to your home or office on a regular basis, or are visiting...Almost all of them involve people trying to talk with each other. But in these very moments where a conversation would enhance an encounter, we often fall short.
+                .post-modern-footer
+                  div: ul.post-modern-meta
+                    li
+                      span.icon.mdi.mdi-tag
+                      a(href='#') Taxi
+                      
+                  div: ul.post-modern-info
+                    li
+                      span.icon.mdi.mdi-eye
+                      span 193
+                    li: a(href=postLink)
+                      span.icon.mdi.mdi-comment
+                      span 3
+                    
+          // Post modern
+          article.post-modern
+            .post-modern-aside
+              time(datetime='2017') Feb 27, 2017 at 5:47 pm 
+              figure.post-modern-avatar-wrap: +jpg('post-author-1-108x108', 'post-modern-avatar')
+              p.post-modern-author: a(href='single-post.html') Ronald Chen
+
+            .post-modern-main
+              a.post-modern-image: +jpg('blog-post-2-870x580')
+              .post-modern-body
+                h5.post-modern-title: a(href='image-post.html') Finding Lost Property: How to Quickly Regain Your Belongings
+                p After an outing, you decide to catch a cab. You get home only to discover that you lost something really important in your taxi. Most people won’t bother to try to find the item. We recommend using this little guide of recovering lost property to make your search for the lost item really successful. First, it will be a good decision to contact the driver or dispatcher...
+                .post-modern-footer
+                  div: ul.post-modern-meta
+                    li
+                      span.icon.mdi.mdi-tag
+                      a(href='#') Taxi
+
+                  div: ul.post-modern-info
+                    li
+                      span.icon.mdi.mdi-eye
+                      span 193
+                    li: a(href='image-post.html')
+                      span.icon.mdi.mdi-comment
+                      span 3
+                    
+          // Post modern
+          article.post-modern
+            .post-modern-aside
+              time(datetime='2017') Feb 27, 2017 at 5:47 pm 
+              figure.post-modern-avatar-wrap: +jpg('post-author-1-108x108', 'post-modern-avatar')
+              p.post-modern-author: a(href='single-post.html') Ronald Chen
+
+            .post-modern-main
+              a(href='video-post.html').post-blog-video.post-modern-video
+                figure: +jpg('blog-post-3-870x580')
+                span.icon.mdi.mdi-play-circle-outline
+              .post-modern-body
+                h5.post-modern-title: a(href='video-post.html') Luxury Taxi Weekly Digest: New Gadgets & Technologies We Use: an Essential Guide
+                p We are glad to introduce an update to all our taxis. Because technologies develop as time goes by, our taxis also deserve something new. We decided that installing tablets for our clients’ convenience will be the best option, and here’s why and what they will include. The newly proposed tablets would have a credit card reader to collect the fare and remove...
+                .post-modern-footer
+                  div: ul.post-modern-meta
+                    li
+                      span.icon.mdi.mdi-tag
+                      a(href='#') Taxi
+
+                  div: ul.post-modern-info
+                    li
+                      span.icon.mdi.mdi-eye
+                      span 193
+                    li: a(href='video-post.html')
+                      span.icon.mdi.mdi-comment
+                      span 3
+                      
+          // Blog Footer
+          a.button.button-default-outline.button-nina.button-block.button-blog(href='#') Load more posts
+          ul.pagination-custom
+            li.active: a(href='#') 1
+            li: a(href='#') 2
+            li: a(href='#') 3
+            li: a(href='#') 4
+
+        .cell-sm-9.cell-md-4.cell-lg-3.blog-aside
+          .blog-aside-item
+            h6 Search
+            form.rd-search.rd-search-modern(action="search-results.html" method="GET")
+              div.form-wrap
+                input(class="rd-search-input form-input" id="rd-search-input" type="text" name="s" autocomplete="off")
+                label.form-label(for="rd-search-input" class="form-label") Search
+              button.button.mdi.mdi-magnify(type='submit')
+
+          .blog-aside-item
+            h6 Archive
+            ul.list-marked.list-marked-secondary
+              li: a(href='#') January 2017
+              li: a(href='#') February 2017
+              li: a(href='#') March 2017
+              li: a(href='#') April 2017
+              li: a(href='#') May 2017
+
+          .blog-aside-item
+            h6 About us
+            p As a company that operates throughout the USA with a vast and developed partner network, we provide taxicab services in big cities, at many central airports, and other locations. Our service range is constantly developing, and that’s one of the reasons why people love us.
+            a.button.button-xs.button-default-outline.button-nina(href='about-us.html') learn more
+
+          .blog-aside-item
+            h6 categories
+            ul.list-marked.list-marked-secondary
+              li: a(href='#')  Taxi
+              li: a(href='#') Tips & Tricks
+              li: a(href='#') Reviews
+              li: a(href='#') News
+              li: a(href='#')  Events
+
+          .blog-aside-item
+            h6 twitter feed
+            ul.twitter.list-twitter(data-twitter-username='templatemonster')
+              - for (var i = 0; i < 3 ; i++)
+                li(data-twitter-type='tweet')
+                  .unit.unit-xs-horizontal
+                    .unit-left
+                      span.mdi.mdi-twitter.twitter-icon.icon-md-middle
+                    .unit-body
+                      p(data-tweet='text')
+                      time(data-date="text" data-datetime="datetime" datetime='2017')
+          .blog-aside-item
+            h6 recent blog posts
+            // Post minimal
+            article.post-minimal
+              p.post-minimal-title: a(href=postLink) Difference Between Uber and Taxis
+              time.post-minimal-time(datetime='2017') Feb 27, 2017 at 5:47 pm
+
+            // Post minimal
+            article.post-minimal
+              p.post-minimal-title: a(href=postLink) Finding Lost Property: How to Quickly Regain Your Belongings
+              time.post-minimal-time(datetime='2017') Feb 27, 2017 at 5:47 pm
+
+            // Post minimal
+            article.post-minimal
+              p.post-minimal-title: a(href=postLink) Selecting a Taxi Service: What You Must Know and Be Aware of
+              time.post-minimal-time(datetime='2017') Feb 27, 2017 at 5:47 pm
+
+
+          .blog-aside-item
+            // Facebook Feed
+            #fb-root
+              .fb-page-responsive
+                .fb-page(data-href='https://www.facebook.com/TemplateMonster', data-tabs='timeline', data-height='540', data-small-header='false', data-adapt-container-width='true', data-hide-cover='false', data-show-facepile='true')
+                  .fb-xfbml-parse-ignore
+                    blockquote(cite='https://www.facebook.com/TemplateMonster')
+                      a(href='https://www.facebook.com/TemplateMonster') TemplateMonster
+  ='\n'
+
+  // Page Footer
+  +footer-extended({     className: 'bg-gray-darker',     instaType : 'tagged',     tagName : 'bTaxiTM'   })
+
+
+

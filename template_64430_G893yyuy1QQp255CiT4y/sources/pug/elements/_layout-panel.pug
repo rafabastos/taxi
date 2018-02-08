@@ -1,0 +1,176 @@
+.layout-panel-wrap
+  .layout-panel
+    button.layout-panel-toggle(data-custom-toggle='.layout-panel-wrap' data-custom-toggle-disable-on-blur='false')
+      span
+
+    .layout-panel-content.scroll-wrap
+      .layout-panel-inner.isotope-wrap
+        .layout-panel-header
+          .button-group.group-xxs.group-middle
+            a.button.button-xs.button-secondary.button-icon.button-icon-left.button-nina(href=getTemplateLink target='_blank')
+              span.icon.mdi.mdi-cart-outline
+              | Buy template
+            a.button.button-xs.button-default-outline.button-nina(href=builderLink target='_blank')
+              | Try Builder
+          .layout-panel-element 
+            +png(logoDefault) 
+
+        .layout-panel-controls
+          .form-wrap 
+            label.checkbox-inline.checkbox-material
+              if (altColorEnabled)
+                input(type='checkbox' checked='' name='alt-color').alt-color-toggle
+              else
+                input(type='checkbox' name='alt-color').alt-color-toggle
+              | Color Scheme Toggle
+
+        // Isotope Filters
+        .isotope-filters
+          ul.inline-list-xxs
+            li: a.active(data-isotope-filter='*', data-isotope-group='layouts', href='#') All
+            li: a(data-isotope-filter='templates', data-isotope-group='layouts', href='#') Templates
+            li: a(data-isotope-filter='headers', data-isotope-group='layouts', href='#') Headers
+            li: a(data-isotope-filter='footers', data-isotope-group='layouts', href='#') Footers
+
+          // Isotope Content
+        .layout-panel-main
+          .isotope(data-isotope-layout='fitRows', data-isotope-group='layouts')
+            .isotope-item(data-filter='templates')
+              +thumbnail-small({
+                filename: 'landing-home',
+                title: 'Home',
+                link: 'index.html'
+              })
+
+            .isotope-item(data-filter='templates')
+              +thumbnail-small({
+                filename: 'landing_Auction',
+                title: 'Auction',
+                link: 'landing-auction.html'
+              })
+
+            .isotope-item(data-filter='templates')
+              +thumbnail-small({
+                filename: 'landing_Environmental',
+                title: 'Environmental',
+                link: 'landing-environmental.html'
+              })
+
+            .isotope-item(data-filter='templates')
+              +thumbnail-small({
+                filename: 'landing_IT_Templates',
+                title: 'IT Company',
+                link: 'landing-it-company.html'
+              })
+
+            .isotope-item(data-filter='templates')
+              +thumbnail-small({
+                filename: 'landing_Maritime',
+                title: 'Maritime',
+                link: 'landing-maritime.html'
+              })
+
+            .isotope-item(data-filter='templates')
+              +thumbnail-small({
+                filename: 'landing_Movie',
+                title: 'Movie',
+                link: 'landing-movie.html'
+              })
+
+            .isotope-item(data-filter='templates')
+              +thumbnail-small({
+                filename: 'landing_Museum',
+                title: 'Museum',
+                link: 'landing-museum.html'
+              })
+
+            .isotope-item(data-filter='templates')
+              +thumbnail-small({
+                filename: 'landing_Private_Airlines',
+                title: 'Private Airlines',
+                link: 'landing-private-airlines.html'
+              })
+
+            .isotope-item(data-filter='templates')
+              +thumbnail-small({
+                filename: 'landing_SEO',
+                title: 'SEO',
+                link: 'landing-seo.html'
+              })
+
+            .isotope-item(data-filter='templates')
+              +thumbnail-small({
+                filename: 'landing_Taxi',
+                title: 'Taxi',
+                link: 'landing-taxi.html'
+              })
+
+            .isotope-item(data-filter='templates')
+              +thumbnail-small({
+                filename: 'landing_Theatre',
+                title: 'Theatre',
+                link: 'landing-theatre.html'
+              })
+
+            .isotope-item(data-filter='templates')
+              +thumbnail-small({
+                filename: 'landing_Trucking_alt_colors',
+                title: 'Trucking',
+                link: 'landing-trucking.html'
+              })
+
+            .isotope-item(data-filter='headers')
+              +thumbnail-small({
+                filename: 'landing_Museum',
+                title: 'Classic Navigation',
+                link: 'landing-museum.html'
+              })
+
+            .isotope-item(data-filter='headers')
+              +thumbnail-small({
+                filename: 'landing_IT_Templates',
+                title: 'Centered Navigation',
+                link: 'landing-it-company.html'
+              })
+
+            .isotope-item(data-filter='headers')
+              +thumbnail-small({
+                filename: 'landing_Trucking_alt_colors',
+                title: 'Corporate Navigation',
+                link: 'landing-trucking.html'
+              })
+
+            .isotope-item(data-filter='headers')
+              +thumbnail-small({
+                filename: 'landing_Auction',
+                title: 'Shop Navigation',
+                link: 'landing-auction.html'
+              })
+
+            .isotope-item(data-filter='footers')
+              +thumbnail-small({
+                filename: 'footer-1',
+                title: 'Standard Footer',
+                link: 'landing-it-company.html'
+              })
+
+            .isotope-item(data-filter='footers')
+              +thumbnail-small({
+                filename: 'footer-2',
+                title: 'Minimal Footer',
+                link: 'landing-museum.html'
+              })
+
+            .isotope-item(data-filter='footers')
+              +thumbnail-small({
+                filename: 'footer-3',
+                title: 'Extended Footer',
+                link: 'landing-taxi.html'
+              })
+
+            .isotope-item(data-filter='footers')
+              +thumbnail-small({
+                filename: 'footer-4',
+                title: 'Alternative Footer',
+                link: 'landing-auction.html'
+              })

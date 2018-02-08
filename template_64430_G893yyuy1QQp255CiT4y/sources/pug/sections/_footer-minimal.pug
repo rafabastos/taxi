@@ -1,0 +1,25 @@
+// Footer Minimal
+footer.section.page-footer.page-footer-minimal.text-center
+  .shell.shell-wide
+    .range.range-xs-center.range-sm-middle.range-30
+      .cell-sm-10.cell-md-7.cell-lg-4.text-lg-left
+        +png('logo-128x52', 'default-logo')
+        +png(logoInverse, 'inverse-logo')
+      .cell-sm-10.cell-md-7.cell-lg-4
+        p.right
+          | &#169; #[span(class="copyright-year")] All Rights Reserved
+          | &nbsp;
+          a(href="#") Terms of Use
+          | &nbsp;
+          span and
+          | &nbsp;
+          a(href="privacy.html") Privacy Policy
+        if(footerLink)
+          // {%FOOTER_LINK}
+      .cell-sm-10.cell-md-7.cell-lg-4.text-lg-right
+        ul.group-xs.group-middle
+          li: a.icon.icon-md-middle.icon-circle.icon-secondary-5-filled.mdi.mdi-facebook(href='#')
+          li: a.icon.icon-md-middle.icon-circle.icon-secondary-5-filled.mdi.mdi-twitter(href='#')
+          li: a.icon.icon-md-middle.icon-circle.icon-secondary-5-filled.mdi.mdi-instagram(href='#')
+          li: a.icon.icon-md-middle.icon-circle.icon-secondary-5-filled.mdi.mdi-google(href='#')
+          li: a.icon.icon-md-middle.icon-circle.icon-secondary-5-filled.mdi.mdi-linkedin(href='#')

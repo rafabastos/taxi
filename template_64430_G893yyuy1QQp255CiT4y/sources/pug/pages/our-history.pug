@@ -1,0 +1,62 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-panel
+
+block variables
+  - var activeIndex = 5
+  - var pageName = 'Our History'
+
+block page
+  // Page Header
+  +breadcrumbs-header({ headerClass: 'breadcrumbs-background-01',
+    text: "About Us",
+    path: [[menu[activeIndex].title, menu[activeIndex].link], [pageName]]
+  })
+  
+  // timeline
+  section.section.section-lg.bg-white.text-center
+    
+    .shell.shell-wide
+      .range.range-xs-center
+        .cell-md-9.cell-lg-8.cell-xl-6
+          h3 timeline
+          .divider.divider-default
+          p Since our establishment, we have been working to bring our customers the ultimatecomfort in all our services. Here is a short look on what we achieved and who we are today
+
+          .time-line-vertical
+            .time-line-vertical-element.time-line-vertical-element-offset
+              .unit.unit-sm.unit-sm-horizontal.unit-spacing-xxl
+                .unit-left
+                  .time-line-time
+                    time.wow.fadeInLeft(data-wow-delay=".6s" datetime='2017') April, 2016
+                .unit-body
+                  .time-line-content.wow.fadeInRight(data-wow-delay=".6s")
+                    h5 We gathered the team of dedicated and knowledgeable drivers and dispatchers
+                    +jpg('image-7-570x380')
+                    p Before we started working at Luxury Taxi as a team, we extended our team with young, talented, and promising drivers and dispatchers who later became the foundation of our company.
+
+            .time-line-vertical-element.time-line-vertical-element-offset
+              .unit.unit-sm-horizontal.unit-spacing-xxl
+                .unit-left
+                  .time-line-time
+                    time.wow.fadeInLeft(data-wow-delay=".7s" datetime='2017') September, 2016
+                .unit-body
+                  .time-line-content.wow.fadeInRight(data-wow-delay=".7s")
+                    h5 Opening new offices and service improvement
+                    +jpg('image-8-570x380')
+                    p To introduce our services to new clients, we opened our first New York office in 2008. It instantly showed great results. Our fleet increased by 20 cars and our team welcomed a lot of new drivers.
+
+            .time-line-vertical-element.time-line-vertical-element-offset
+              .unit.unit-sm-horizontal.unit-spacing-xxl
+                .unit-left
+                  .time-line-time
+                    time.wow.fadeInLeft(data-wow-delay=".8s" datetime='2017') March, 2017
+                .unit-body
+                  .time-line-content.wow.fadeInRight(data-wow-delay=".8s")
+                    h5 International cooperation
+                    +jpg('image-9-570x380')
+                    p As we continue to grow, develop, and expand, we started a special partnership program aimed at cooperation with our overseas colleagues. We already offer our services in Germany and France.
+  ="\n"
+
+  +footer-extended({     className: 'bg-gray-darker',     instaType : 'tagged',     tagName : 'bTaxiTM'   })

@@ -1,0 +1,159 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-team-classic
+include ../elements/_ui-gallery-item
+
+block variables
+  - var activeIndex = 1
+  - var pageName = 'About us'
+
+block page
+  // Page Header
+  +breadcrumbs-header({ 
+    headerClass: 'breadcrumbs-background-01',
+    text: 'Who We Are',
+    path: [[menu[activeIndex].title, menu[activeIndex].link], [pageName]]
+  })
+  
+  // Welcome to Our Taxi
+  section.section.section-lg.bg-white
+    
+    .shell.shell-bigger 
+      .range.range-ten.range-50.range-sm-center.range-md-middle.range-lg-justify.range-md-reverse
+        .cell-sm-9.cell-md-5.cell-lg-4
+          h3 Welcome to Our Taxi
+          .divider.divider-default
+          p.heading-5 Luxury Taxi was founded in 1994 by Ronald Chen, a former taxi driver and current entrepreneur  to revolutionize the industry of  city transportation.
+          p.text-spacing-sm As a company that operates throughout the USA with a vast and developed partner network, we provide taxicab services in big cities, at many central airports, and other locations. Our service range is constantly developing, and that’s one of the reasons why people love us.
+          a.button.button-default-outline.button-nina(href='our-history.html') learn more
+        .cell-sm-9.cell-md-5
+          +jpg('about-us-1-720x459')
+  ="\n"
+
+  // Small Features
+  section.section.section-lg.section-lg-alternative.bg-gray-lighter
+    .shell-wide
+      .range.range-50.range-xs-center.text-gray-light
+        .cell-xs-10.cell-sm-6.cell-lg-3
+          article.box-minimal
+            .box-minimal-header
+              .box-minimal-icon.mdi.mdi-road-variant
+              h6.box-minimal-title local routes
+            p Looking for an affordable and easy way to reach another part of the city or state? Don’t worry, we’ve got you covered with our high-quality local taxi services.
+        .cell-xs-10.cell-sm-6.cell-lg-3
+          article.box-minimal
+            .box-minimal-header
+              .box-minimal-icon.mdi.mdi-map
+              h6.box-minimal-title abroad travels
+            p We provide not only airport transfer services for international travelers but also a wide variety of supplemental taxi services abroad.
+        .cell-xs-10.cell-sm-6.cell-lg-3
+          article.box-minimal
+            .box-minimal-header
+              .box-minimal-icon.mdi.mdi-web
+              h6.box-minimal-title business travels
+            p Our large capacity, timeliness and great reputation make us your ideal partner for professional and comfortable business travel.  We can also make a good impression with your clients.
+        .cell-xs-10.cell-sm-6.cell-lg-3
+          article.box-minimal
+            .box-minimal-header
+              .box-minimal-icon.mdi.mdi-headset
+              h6.box-minimal-title 24/7 online support
+            p We provide a variety of payment methods that include Paypal, Visa/Mastercard/American Express and lots of others, which can be customized.
+  ="\n"
+
+  // our team
+  section.section.section-lg.text-center.bg-gray-darker
+    .shell.shell-wide
+      h3 our team 
+      .divider.divider-default
+      .range.range-50.range-xl-90.range-xs-center.offset-custom-2.text-left
+        .cell-sm-10.cell-lg-8.cell-xl-6
+          +team-classic( 'teamInline', {
+            image: 'team-08-300x300',
+            title: 'ronald chen',
+            job_position: 'Founder, CEO',
+            text: 'Ronald Chen is a co-CEO and founder of Luxury Taxi. He holds a degree in Public Administration from The University of Los Angeles. An investment banker by trade, he is an experienced taxi dispatcher and driver.'
+          })
+        .cell-sm-10.cell-lg-8.cell-xl-6
+          +team-classic( 'teamInline', {
+            image: 'team-07-300x300',
+            title: 'Frances Watson',
+            job_position: 'Dispatcher',
+            text: 'Frances has been working with us for several years, and before becoming a dispatcher, she has tried dozens of other jobs as a freelancer.'
+          })
+        .cell-sm-10.cell-lg-8.cell-xl-6
+          +team-classic( 'teamInline', {
+            image: 'team-09-300x300',
+            title: 'Jina Myers',
+            job_position: 'Driver',
+            text: 'Jina came to us a few years ago as a driver trainee, and she almost immediately showed amazing results. No wonder that today she is one of our most promising drivers and she really loves her job.'
+          })
+        .cell-sm-10.cell-lg-8.cell-xl-6
+          +team-classic( 'teamInline', {
+            image: 'team-10-300x300',
+            title: 'Tom Wilson',
+            job_position: 'Driver',
+            text: 'One of our most experienced drivers, Tom Wilson, is the real expert in offering high-quality taxi services. He has years of experience on working for leading taxi services providers.'
+          })
+        
+  ="\n"
+
+  // Our history
+  section.section.section-lg.text-center.bg-white
+    .shell.shell-wide
+      h3 our history
+      .divider.divider-default
+      // Owl Carousel
+      .owl-carousel.time-line-horizontal.text-md-left(
+      data-autoplay='true',
+      data-items='1',
+      data-xs-items='2',
+      data-sm-items='2',
+      data-md-items='3',
+      data-lg-items='3',
+      data-dots='false',
+      data-nav='false',
+      data-stage-padding='0',
+      data-sm-stage-padding='30',
+      data-loop='true',
+      data-margin='15',
+      data-lg-margin='50',
+      data-xl-margin='156',
+      data-mouse-drag="true")
+        .time-line-horizontal-element
+          .time-line-time
+            time.wow.fadeInUp(data-wow-delay=".7s" datetime='2017') April, 2016
+          .time-line-content.wow.fadeInUp(data-wow-delay=".7s")
+            h5: a(href='#') We gathered the team of dedicated and knowledgeable drivers and dispatchers
+            p Before we started working at Luxury Taxi as a team, we extended our team with young, talented, and promising drivers and dispatchers who later became the foundation of our company.
+        .time-line-horizontal-element
+          .time-line-time
+            time.wow.fadeInUp(data-wow-delay=".8s" datetime='2017') September, 2016
+          .time-line-content.wow.fadeInUp(data-wow-delay=".8s")
+            h5: a(href='#') Opening new offices and service improvement
+            p To introduce our services to new clients, we opened our first New York office in 2008. It instantly showed great results. Our fleet increased by 20 cars and our team welcomed a lot of new drivers.
+        .time-line-horizontal-element
+          .time-line-time
+            time.wow.fadeInUp(data-wow-delay=".9s" datetime='2017') March, 2017
+          .time-line-content.wow.fadeInUp(data-wow-delay=".9s")
+            h5: a(href='#') International cooperation with other taxi service providers
+            p As we continue to grow, develop, and expand, we started a special partnership program aimed at cooperation with our overseas colleagues. We already offer our services in Germany and France.
+  ="\n"
+
+  // Projects
+  section.section.section-lg.bg-gray-lighter.text-center
+    .shell.shell-wide
+      .range.range-50.range-sm-center
+        .cell-xs-12.cell-sm-10.cell-md-8.cell-lg-7.cell-xl-6
+          h3 gallery
+          .divider.divider-default
+          p Our company provides a wide range of various taxi services to people all over the US and Europe. Some of our services and advantages of their usage are listed below.
+      include ../elements/_about-gallery
+
+    a.button.button-secondary.button-nina(href='#') view all projects
+
+  ="\n"
+
+  
+
+  +footer-extended({     className: 'bg-gray-darker',     instaType : 'tagged',     tagName : 'bTaxiTM'   })

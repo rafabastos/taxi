@@ -1,0 +1,38 @@
+header.section.page-header
+  // RD Navbar
+  .rd-navbar-wrap.rd-navbar-shop-header
+    nav.rd-navbar(data-layout='rd-navbar-fixed', data-sm-layout='rd-navbar-fixed', data-md-layout='rd-navbar-fullwidth', data-md-device-layout='rd-navbar-fixed', data-lg-layout='rd-navbar-static', data-lg-device-layout="rd-navbar-static",  data-md-stick-up-offset="100px", data-lg-stick-up-offset="150px" data-stick-up='true' data-sm-stick-up='true' data-md-stick-up='true' data-lg-stick-up='true')
+      .rd-navbar-top-panel
+        .rd-navbar-nav-wrap
+          include ../../_navigation
+
+      .rd-navbar-inner
+        // RD Navbar Panel
+        .rd-navbar-panel
+          // RD Navbar Toggle
+          button.rd-navbar-toggle(data-rd-navbar-toggle='.rd-navbar-nav-wrap'): span
+          // RD Navbar Brand
+          .rd-navbar-brand
+            a.brand-name(href='index.html')
+              +png(logoDefault, 'logo-default')
+              +png(logoInverse, 'logo-inverse')
+
+        .rd-navbar-aside-center
+          // RD Navbar Search
+          .rd-navbar-search
+            a.rd-navbar-search-toggle(data-rd-navbar-toggle=".rd-navbar-search" href="#")
+              span
+            form.rd-search(action="search-results.html" data-search-live="rd-search-results-live" method="GET")
+              .rd-mailform-inline.rd-mailform-sm.rd-mailform-inline-modern
+                .rd-mailform-inline-inner
+                  div.form-wrap.form-wrap-icon.mdi-magnify
+                    label.form-label(for="rd-navbar-search-form-input" class="form-label") Search...
+                    input(class="rd-navbar-search-form-input form-input" id="rd-navbar-search-form-input" type="text" name="s" autocomplete="off")
+                    .rd-search-results-live
+                  button.rd-search-form-submit.rd-search-form-submit-icon.mdi.mdi-magnify
+                  button.rd-search-form-submit.button.form-button.button-sm.button-secondary.button-nina search
+
+        .rd-navbar-aside-right
+          .rd-navbar-shop
+            a(href='shopping-cart.html').rd-navbar-shop-icon.mdi.mdi-cart
+              span 2

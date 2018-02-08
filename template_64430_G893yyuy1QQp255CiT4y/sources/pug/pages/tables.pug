@@ -1,0 +1,48 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-table-custom
+
+block variables
+  - var activeIndex = 5
+  - var pageName = 'Tables'
+
+block page
+  
+  +breadcrumbs-header({ headerClass: 'breadcrumbs-background-01',
+    text: "Choose Your Style",
+    path: [[menu[activeIndex].title, menu[activeIndex].link], [pageName]]
+  })
+
+  // Hover Row Table
+  section.section.section-lg.bg-white.text-center
+    
+    .shell
+      .range.range-xs-center
+        .cell-sm-10.cell-lg-8
+          h3 Hover Row Table
+          +table('table-hover')
+
+  ="\n"
+
+  // Color Header Row Table
+  section.section.section-lg.bg-white.text-center
+    .shell
+      .range.range-xs-center
+        .cell-sm-10.cell-lg-8
+          h3 color header table
+          +table('table-color-header')
+
+  ="\n"
+
+  // Bordered Row Table
+  section.section.section-lg.bg-white.text-center
+    .shell
+      .range.range-xs-center
+        .cell-sm-10.cell-lg-8
+          h3 bordered table
+          +table('table-custom-bordered')
+  ="\n"
+
+  // Page Footer
+  +footer-extended({     className: 'bg-gray-darker',     instaType : 'tagged',     tagName : 'bTaxiTM'   })

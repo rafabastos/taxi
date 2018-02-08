@@ -1,0 +1,36 @@
+extends  ../_skeleton
+
+//- Includes
+
+block variables
+  - var activeIndex = 5
+  - var pageName = '503 page'
+
+block page
+  // Page Header
+  header.section.page-header.bg-gray-darker.breadcrumbs-custom-wrap
+    include ../sections/_header-default
+
+  section.section.fullwidth-page.bg-image(style='background-image: url(images/bg-02.jpg)') 
+    .fullwidth-page-inner
+      .section-md.text-center
+        .shell
+          p.breadcrumbs-custom-subtitle Service is Temporary Unavailable
+          p.heading-1.breadcrumbs-custom-title error 503
+          p Sorry, we're offline right now to make our site even better. #[br.veil.reveal-sm-inline]Please, come back later and check what we've been up to.
+          .group-md.button-group
+            a(href='index.html').button.button-secondary.button-nina  back to home page
+            a(href='contacts.html').button.button-default-outline.button-nina  contact us
+
+
+      // Page Footer
+      .section-xs.page-footer.text-center
+        .shell
+          p.right
+            | &#169; #[span(class="copyright-year")] All Rights Reserved
+            | &nbsp;
+            a(href="#") Terms of Use
+            | &nbsp;
+            span and
+            | &nbsp;
+            a(href="privacy-policy.html") Privacy Policy

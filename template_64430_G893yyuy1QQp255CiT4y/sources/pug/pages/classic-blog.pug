@@ -1,0 +1,295 @@
+extends  ../_skeleton
+
+//- Includes
+
+block variables
+  - var activeIndex = 4
+  - var pageName = 'Blog Classic'
+
+block page
+  // Page Header
+  +breadcrumbs-header({ headerClass: 'breadcrumbs-background-03',
+    text: "Our News",
+    path: [[menu[activeIndex].title, menu[activeIndex].link], ['Classic blog']]
+  }) 
+
+  // Blog
+  section.section.section-xl.bg-gray-lighter
+    
+    .shell.shell-bigger
+      .range.range-ten.range-50.range-sm-90.range-sm-center.range-lg-justify
+        .cell-sm-9.cell-md-6.blog-classic-main.text-center
+          // Post classic
+          article.post-classic
+            a.post-classic-media(href=postLink)
+              +jpg('blog-post-1-870x580')
+            .post-classic-body
+              p.post-classic-title: a(href=postLink) Selecting a Taxi Service: What You Must  Know and Be Aware of
+              ul.post-classic-meta
+                li
+                  span.icon.mdi.mdi-account
+                  span 
+                    | by 
+                    a(href='about-me.html') Ronald Chen
+                li
+                  span.icon.mdi.mdi-calendar-clock
+                  time(datetime='2017') Feb 27, 2017 at 5:47 pm
+                li
+                  span.icon.mdi.mdi-tag
+                  a(href='#') Business
+
+              .post-classic-text
+                p A taxi is an essential component of the public transportation system. Whether you are calling a taxi to your home or office on a regular basis, or are visiting a strange city and need a cab to move around, you can benefit from using a taxi. First, not all taxis are the same. They may all look similar on the surface, but there is a range of factors that are not easily apparent that can affect the...
+
+              .post-classic-footer
+                a.button.button-sm.button-secondary.button-nina(href=postLink) Continue reading
+                div: ul.post-classic-info
+                  li
+                    span.icon.mdi.mdi-eye
+                    span 193
+                  li: a(href=postLink)
+                    span.icon.mdi.mdi-comment
+                    span 3
+
+          // Post classic
+          article.post-classic
+            a.post-classic-media(href='image-post.html')
+              +jpg('blog-post-2-870x580')
+            .post-classic-body
+              p.post-classic-title: a(href='image-post.html') Finding Lost Property: How to Quickly Regain Your Belongings
+              ul.post-classic-meta
+                li
+                  span.icon.mdi.mdi-account
+                  span
+                    | by 
+                    a(href='about-me.html') Ronald Chen
+                li
+                  span.icon.mdi.mdi-calendar-clock
+                  time(datetime='2017') Feb 27, 2017 at 5:47 pm
+                li
+                  span.icon.mdi.mdi-tag
+                  a(href='#') Business
+
+              .post-classic-text
+                p After an outing, you decide to catch a cab. You get home only to discover that you lost something really important in your taxi. Most people won’t bother to try to find the item. We recommend using this little guide of recovering lost property to make your search for the lost item really successful. First, it will be a good decision to contact the driver or dispatcher immediately after you have...
+
+              .post-classic-footer
+                a.button.button-sm.button-secondary.button-nina(href='image-post.html') Continue reading
+                div: ul.post-classic-info
+                  li
+                    span.icon.mdi.mdi-eye
+                    span 193
+                  li: a(href='image-post.html')
+                    span.icon.mdi.mdi-comment
+                    span 3
+
+          // Post classic
+          article.post-classic
+            .post-classic-media
+              a(href='video-post.html').post-blog-video.post-classic-video
+                figure: +jpg('blog-post-3-870x580')
+                span.icon.mdi.mdi-play-circle-outline
+            .post-classic-body
+              p.post-classic-title: a(href='video-post.html') Luxury Taxi Weekly Digest: New Gadgets & Technologies We Use
+              ul.post-classic-meta
+                li
+                  span.icon.mdi.mdi-account
+                  span
+                    | by 
+                    a(href='about-me.html') Ronald Chen
+                li
+                  span.icon.mdi.mdi-calendar-clock
+                  time(datetime='2017') Feb 27, 2017 at 5:47 pm
+                li
+                  span.icon.mdi.mdi-tag
+                  a(href='#') Business
+
+              .post-classic-text
+                p We are glad to introduce an update to all our taxis. Because technologies develop as time goes by, our taxis also deserve something new. We decided that installing tablets for our clients’ convenience will be the best option, and here’s why and what they will include. The newly proposed tablets would have a credit card reader to collect the fare and remove any third parties between...
+
+              .post-classic-footer
+                a.button.button-sm.button-secondary.button-nina(href='video-post.html') Continue reading
+                div: ul.post-classic-info
+                  li
+                    span.icon.mdi.mdi-eye
+                    span 193
+                  li: a(href='video-post.html')
+                    span.icon.mdi.mdi-comment
+                    span 3
+
+          // Post classic
+          article.post-classic
+            .post-classic-media.post-quote-wrap
+              .post-classic-quote
+                p.post-classic-title Taxis and Uber have something in common, yet they are very different.
+
+            .post-classic-body
+              p.post-classic-title: a(href='single-post.html') Difference Between Uber and Taxis
+              ul.post-classic-meta
+                li
+                  span.icon.mdi.mdi-account
+                  span
+                    | by 
+                    a(href='single-post.html') Ronald Chen
+                li
+                  span.icon.mdi.mdi-calendar-clock
+                  time(datetime='2017') Feb 27, 2017 at 5:47 pm
+                li
+                  span.icon.mdi.mdi-tag
+                  a(href='#') Business
+
+              .post-classic-text
+                p Taxis carry fair, consistent pricing, no matter how busy they are. Ride-hailing services make the majority of their money on surge pricing, which is dictated by demand at different times during the day. Even trusted consumer watchdogs, Consumer Reports, say taxis are cheaper. In this post we’ll compare two major services to find out how different they are. First, by using a taxi, you know...
+
+              .post-classic-footer
+                a.button.button-sm.button-secondary.button-nina(href='single-post.html') Continue reading
+                div: ul.post-classic-info
+                  li
+                    span.icon.mdi.mdi-eye
+                    span 193
+                  li: a(href='single-post.html')
+                    span.icon.mdi.mdi-comment
+                    span 3
+
+          // Post classic
+          article.post-classic
+            .post-classic-media
+              a(href='audio-post.html').post-blog-video.post-classic-video
+                figure: +jpg('blog-post-4-870x580')
+                span.icon.mdi.mdi-play-circle-outline
+            .post-classic-body
+              p.post-classic-title: a(href='audio-post.html') How to Take a Taxi: a Beginner’s Guide
+              ul.post-classic-meta
+                li
+                  span.icon.mdi.mdi-account
+                  span
+                    | by 
+                    a(href='about-me.html') Ronald Chen
+                li
+                  span.icon.mdi.mdi-calendar-clock
+                  time(datetime='2017') Feb 27, 2017 at 5:47 pm
+                li
+                  span.icon.mdi.mdi-tag
+                  a(href='#') Business
+
+
+              // Inline JP Audio
+              .post-audio.jp-player-init
+                .jp-jplayer
+                .jp-audio(role='application', aria-label='media player')
+                  ul.jp-player-list
+                    li.jp-player-list-item(data-jp-title='Simple melody', data-jp-artist='Unknown artist', data-jp-mp3='audio/sound-1.mp3')
+                  .jp-interface
+                    .jp-button.jp-playpaus-button
+                      button.jp-btn.jp-play(role='button', tabindex='0')
+                    .jp-time-rail
+                      .jp-progress
+                        .jp-seek-bar
+                          .jp-play-bar
+                    .jp-button.jp-volume-button
+                      button.jp-btn.jp-mute(role='button', tabindex='0')
+                    .jp-volume-bar
+                      .jp-volume-bar-value
+                  .jp-playlist.jp-playlist--hidden
+                    ul
+                      li
+                  .jp-no-solution
+                    span Update Required
+                    |            To play the media you will need to either update your browser to a recent version or update your
+                    a(href='http://get.adobe.com/flashplayer/', target='_blank')  Flash plugin
+                    | .
+
+              .post-classic-text
+                p If you live in a part of the world where taking a taxi is not a regular activity, the thought of getting in a car and trusting a stranger to get you to your destination might be intimidating. For many people in the world, taking taxis are a part of their daily routine and a completely normal way to travel. However, if you’ve never traveled by taxi before, you might have a lot of questions and fears...
+
+              .post-classic-footer
+                a.button.button-sm.button-secondary.button-nina(href='audio-post.html') Continue reading
+                div: ul.post-classic-info
+                  li
+                    span.icon.mdi.mdi-eye
+                    span 193
+                  li: a(href='audio-post.html')
+                    span.icon.mdi.mdi-comment
+                    span 3
+
+
+          a.button.button-default-outline.button-nina.button-block.button-blog(href='#') Load more posts
+          ul.pagination-custom
+            li.active: a(href='#') 1
+            li: a(href='#') 2
+            li: a(href='#') 3
+            li: a(href='#') 4
+
+        .cell-sm-9.cell-md-4.cell-lg-3.blog-aside
+          .blog-aside-item
+            h6 Search
+            form.rd-search.rd-search-modern(action="search-results.html" method="GET")
+              div.form-wrap
+                input(class="rd-search-input form-input" id="rd-search-input" type="text" name="s" autocomplete="off")
+                label.form-label(for="rd-search-input" class="form-label") Search
+              button.button.mdi.mdi-magnify(type='submit')
+
+          .blog-aside-item
+            h6 Archive
+            ul.list-marked.list-marked-secondary
+              li: a(href='#') January 2017
+              li: a(href='#') February 2017
+              li: a(href='#') March 2017
+              li: a(href='#') April 2017
+              li: a(href='#') May 2017
+
+          .blog-aside-item
+            h6 About us
+            p As a company that operates throughout the USA with a vast and developed partner network, we provide taxicab services in big cities, at many central airports, and other locations. Our service range is constantly developing, and that’s one of the reasons why people love us.
+            a.button.button-xs.button-default-outline.button-nina(href='about-us.html') learn more
+
+          .blog-aside-item
+            h6 categories
+            ul.list-marked.list-marked-secondary
+              li: a(href='#')  Taxi
+              li: a(href='#') Tips & Tricks
+              li: a(href='#') Reviews
+              li: a(href='#') News
+              li: a(href='#')  Events
+
+          .blog-aside-item
+            h6 twitter feed
+            ul.twitter.list-twitter(data-twitter-username='templatemonster')
+              - for (var i = 0; i < 3 ; i++)
+                li(data-twitter-type='tweet')
+                  .unit.unit-xs-horizontal
+                    .unit-left
+                      span.mdi.mdi-twitter.twitter-icon.icon-md-middle
+                    .unit-body
+                      p(data-tweet='text')
+                      time(data-date="text" data-datetime="datetime" datetime='2017')
+          .blog-aside-item
+            h6 recent blog posts
+            // Post minimal
+            article.post-minimal
+              p.post-minimal-title: a(href=postLink) Difference Between Uber and Taxis
+              time.post-minimal-time(datetime='2017') Feb 27, 2017 at 5:47 pm
+
+            // Post minimal
+            article.post-minimal
+              p.post-minimal-title: a(href=postLink) Finding Lost Property: How to Quickly Regain Your Belongings
+              time.post-minimal-time(datetime='2017') Feb 27, 2017 at 5:47 pm
+
+            // Post minimal
+            article.post-minimal
+              p.post-minimal-title: a(href=postLink) Selecting a Taxi Service: What You Must Know and Be Aware of
+              time.post-minimal-time(datetime='2017') Feb 27, 2017 at 5:47 pm
+
+
+          .blog-aside-item
+            // Facebook Feed
+            #fb-root
+              .fb-page-responsive
+                .fb-page(data-href='https://www.facebook.com/TemplateMonster', data-tabs='timeline', data-height='540', data-small-header='false', data-adapt-container-width='true', data-hide-cover='false', data-show-facepile='true')
+                  .fb-xfbml-parse-ignore
+                    blockquote(cite='https://www.facebook.com/TemplateMonster')
+                      a(href='https://www.facebook.com/TemplateMonster') TemplateMonster
+  ='\n'
+
+  // Page Footer
+  +footer-extended({     className: 'bg-gray-darker',     instaType : 'tagged',     tagName : 'bTaxiTM'   })

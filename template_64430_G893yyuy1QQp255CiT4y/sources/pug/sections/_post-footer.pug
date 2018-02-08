@@ -1,0 +1,97 @@
+.section-md
+  p.h3-alternate Comments
+  .comment-group
+    // Comment
+    article.comment
+      .comment-avatar: +jpg('user-1-80x80')
+      .comment-body
+        .comment-header
+          p.comment-title Catherine Payne
+          time.comment-time(datetime='2017') 2 days ago
+        .comment-text: p Thank you for such an interesting article! I wasn’t sure how to determine whether a taxi company is good enough to use this year but now I know how to handle it.
+        .comment-footer: a.comment-link-reply(href='#') Reply
+
+    .comment-group 
+      // Comment
+      article.comment
+        .comment-avatar: +jpg('user-2-80x80')
+        .comment-body
+          .comment-header
+            p.comment-title Ronald Chen
+            time.comment-time(datetime='2017') 2 days ago
+            span.comment-reply Catherine Payne
+          .comment-text: p Thank you for your comment! I will publish more tips on using taxi services, so stay tuned to receive the latest updates from our blog.
+          .comment-footer: a.comment-link-reply(href='#') Reply
+
+
+    // Comment
+    article.comment
+      .comment-avatar: +jpg('user-3-80x80')
+      .comment-body
+        .comment-header
+          p.comment-title Philip Bowman
+          time.comment-time(datetime='2017') 2 days ago
+        .comment-text: p I have recently used services of a young licensed taxi company and I wasn’t satisfied with it at all. Now I can only confirm that everything written here may come in handy.
+        .comment-footer: a.comment-link-reply(href='#') Reply
+
+.section-lg
+  p.h3-alternate Send a Comment
+  // RD Mailform
+  form.rd-mailform(data-form-output="form-output-global", data-form-type='contact', method='post', action='bat/rd-mailform.php')
+    .range.range-20
+      .cell-sm-6
+        .form-wrap.form-wrap-validation
+          label.form-label-outside(for='form-comment-name') First name
+          input.form-input(id='form-comment-name' type="text" name="name" data-constraints='@Required')
+      .cell-sm-6
+        .form-wrap.form-wrap-validation
+          label.form-label-outside(for='form-comment-last-name') Last name
+          input.form-input(id='form-comment-last-name' type="text" name="last-name" data-constraints="@Required")
+      .cell-sm-6
+        .form-wrap.form-wrap-validation
+          label.form-label-outside(for='form-comment-email') E-mail
+          input.form-input(id='form-comment-email' type="email" name="email" data-constraints="@Email @Required")
+      .cell-sm-6
+        .form-wrap.form-wrap-validation
+          label.form-label-outside(for='form-comment-phone') Phone
+          input.form-input(id='form-comment-phone' type="text" name="phone" data-constraints="@Numeric @Required")
+      .cell-xs-12
+        .form-wrap.form-wrap-validation
+          label.form-label-outside(for='form-comment-message') Message
+          textarea.form-input(id='form-comment-message' name="message" data-constraints="@Required")
+      .cell-xs-12.offset-custom-1
+        .form-button
+          button.button.button-secondary.button-nina(type='submit') send comment
+
+.section-sm
+  p.h3-alternate Recent Posts
+  .range.range-30.range-lg-50
+    .cell-xs-10.cell-sm-6.post-light-wrap
+      article.post-light
+        .unit.unit-horizontal
+          .unit-left: a(href=postLink): +jpg('post-light-1-120x80')
+          .unit-body
+            p.post-light-title: a(href=postLink) Finding Lost Property: How to Quickly Regain Your Belongings
+            time.post-light-time(datetime='2017') Feb 27, 2017 at 5:47 pm
+
+      article.post-light
+        .unit.unit-horizontal
+          .unit-left: a(href=postLink): +jpg('post-light-3-120x80')
+          .unit-body
+            p.post-light-title: a(href=postLink) Difference Between Uber and Taxis
+            time.post-light-time(datetime='2017') Feb 27, 2017 at 5:47 pm
+
+    .cell-xs-10.cell-sm-6.post-light-wrap
+      article.post-light
+        .unit.unit-horizontal
+          .unit-left: a(href=postLink): +jpg('post-light-2-120x80')
+          .unit-body
+            p.post-light-title: a(href=postLink) Luxury Taxi Weekly Digest: New Gadgets & Technologies We Use: an Essential Guide
+            time.post-light-time(datetime='2017') Feb 27, 2017 at 5:47 pm
+
+      article.post-light
+        .unit.unit-horizontal
+          .unit-left: a(href=postLink): +jpg('post-light-4-120x80')
+          .unit-body
+            p.post-light-title: a(href=postLink) How to Take a Taxi: a Beginner’s Guide
+            time.post-light-time(datetime='2017') Feb 27, 2017 at 5:47 pm

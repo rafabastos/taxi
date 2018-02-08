@@ -1,0 +1,36 @@
+// Modal
+#account-modal.modal.modal-custom.modal-account.fade(tabindex='-1', role='dialog')
+  .modal-dialog(role='document')
+    .modal-content
+      .modal-header
+        button.close(type='button', data-dismiss='modal', aria-label='Close')
+          span(aria-hidden='true')
+
+      .modal-body.text-center
+        .modal-body-inner
+          figure.modal-account-image
+            +jpg('registration-modal-01-510x807')
+        .modal-body-inner
+          h4.modal-title registration
+          // RD Mailform
+          form.rd-mailform.form-novi
+            .form-wrap.form-wrap-validation
+              input#forms-email3.form-input(type="email" name="email" data-constraints='@Required')
+              label.form-label(for="forms-email3") E-mail
+            .form-wrap.form-wrap-validation
+              input#forms-login-name.form-input(type="text" name="name" data-constraints='@Required')
+              label.form-label(for="forms-login-name") Nickname
+            .form-wrap.form-wrap-validation
+              input#forms-login-password.form-input(type="password" name="password" data-constraints="@Required")
+              label.form-label(for="forms-login-password") Password
+            .form-wrap.form-wrap-validation
+              input#forms-login-confirm.form-input(type="password" name="confirm" data-constraints="@Required")
+              label.form-label(for="forms-login-confirm") Confirm Password
+            .form-button
+              button.button.button-block.button-secondary.button-nina(type="submit") Sign In
+
+          p.offset-custom-1.text-gray-light or enter with
+          .group-xs.group-middle
+            a.icon.icon-md-smaller.icon-circle.icon-filled.mdi.mdi-facebook(href='#')
+            a.icon.icon-md-smaller.icon-circle.icon-filled.mdi.mdi-twitter(href='#')
+            a.icon.icon-md-smaller.icon-circle.icon-filled.mdi.mdi-google(href='#')

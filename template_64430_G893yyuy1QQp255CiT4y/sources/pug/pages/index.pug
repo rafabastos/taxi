@@ -1,0 +1,519 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-panel
+include ../elements/_ui-gallery-item
+include ../elements/_ui-maps
+include ../elements/_ui-counter
+include ../elements/_pricings
+
+block variables
+  - var activeIndex = 0
+  - var pageName = 'Home'
+  - var footerLink = false 
+
+block page
+  // Page Header
+  header.section.page-header.bg-gray-darker.breadcrumbs-custom-wrap
+    .rd-navbar-wrap.rd-navbar-default
+      nav.rd-navbar(data-layout='rd-navbar-fixed', data-sm-layout='rd-navbar-fixed', data-md-layout='rd-navbar-fullwidth', data-md-device-layout='rd-navbar-fixed', data-lg-layout='rd-navbar-static', data-lg-device-layout="rd-navbar-static",  data-md-stick-up-offset="2px", data-lg-stick-up-offset="2px" data-stick-up='true' data-sm-stick-up='true' data-md-stick-up='true' data-lg-stick-up='true')
+        .rd-navbar-inner
+          // RD Navbar Panel
+          .rd-navbar-panel
+            // RD Navbar Toggle
+            button.rd-navbar-toggle(data-rd-navbar-toggle='.rd-navbar-nav-wrap'): span
+
+            // RD Navbar Brand
+            .rd-navbar-brand
+              a.brand-name(href='index.html')
+                +png(logoDefault, 'logo-default')
+                +png(logoInverse, 'logo-inverse')
+
+          .rd-navbar-aside-right
+            .rd-navbar-nav-wrap
+              include ../_navigation
+            .rd-navbar-aside-right-inner
+              // RD Navbar Search
+              .rd-navbar-search
+                a.rd-navbar-search-toggle(data-rd-navbar-toggle=".rd-navbar-search" href="#")
+                  span
+                form.rd-search(action="search-results.html" data-search-live="rd-search-results-live" method="GET")
+                  div.form-wrap
+                    label.form-label(for="rd-navbar-search-form-input" class="form-label") Search...
+                    input(class="rd-navbar-search-form-input form-input" id="rd-navbar-search-form-input" type="text" name="s" autocomplete="off")
+                    #rd-search-results-live.rd-search-results-live
+                  button.rd-search-form-submit.mdi.mdi-magnify
+              
+  ="\n"
+  
+  section.section.section-access
+    // Welcome To
+    .swiper-container.swiper-slider.swiper-modern.swiper-modern-style-1.swiper-modern-1(data-loop='true' data-autoplay='false' data-simulate-touch="false")
+      .swiper-wrapper
+        .swiper-slide(data-slide-bg='images/taxi-slider-slide-01-1920x800.jpg')
+          .swiper-slide-caption
+            .section-lg.context-dark.text-center
+              .shell.shell-wide
+                .range.range-xs-center
+                  .cell-lg-10.cell-xl-10
+                    .swiper-box-info
+                      .text-regular.heading-4.text-uppercase all inclusive 24/7 taxi service
+                      h1.reveal-inline-block: a.text-secondary-1(href='callto:#') 5-555-55-55
+                      p.text-spacing-sm The operator will call back immediately
+                        br.veil.reveal-sm-block
+                        =" "
+                        | and report the cost of travel
+
+        .swiper-slide(data-slide-bg='images/taxi-slider-slide-02-1920x800.jpg')
+          .swiper-slide-caption
+            .section-lg.context-dark.text-center
+              .shell.shell-wide
+                .range.range-xs-center
+                  .cell-lg-10.cell-xl-8
+                    .swiper-box-info
+                      .text-light.heading-4.text-uppercase
+                        span Call us:
+                        =" "
+                        a.text-secondary-1(href='callto:#') 5-555-55-55
+                      h1 24-Hour Service
+                      p.text-spacing-sm Enjoy the ride to your selected destination
+                        br.veil.reveal-sm-block
+                        =" "
+                        | with our experienced and knowledged drivers
+
+        .swiper-slide(data-slide-bg='images/taxi-slider-slide-03-1920x800.jpg')
+          .swiper-slide-caption
+            .section-lg.context-dark.text-center
+              .shell.shell-wide
+                .range.range-xs-center
+                  .cell-lg-10.cell-xl-10
+                    .swiper-box-info
+                      .text-light.heading-4.text-uppercase
+                        span Our 24/7 hotline:
+                        =" "
+                        a.text-secondary-1(href='callto:#') 5-555-55-55
+                      h1 Drive your dreams
+                      p.text-spacing-sm Luxury Taxi  is the most reliable and secure way to find a taxi
+                        br.veil.reveal-sm-block
+                        =" "
+                        | to drive you anywhere you want.
+
+      // Swiper controls
+      .swiper-button-prev
+      .swiper-button-next
+
+      .swiper-pagination-wrap: .swiper-pagination
+
+  ="\n"
+
+  section.section.section-custom.bg-white
+    .shell.shell-wide
+      .range.range-xs-center
+        .cell-xl-9.cell-xxl-8
+          .form-find
+            .form-find-header
+              h6 find a taxi
+            .form-find-body
+              - contactFormCounter += 1
+              form.rd-mailform.form-flex-inline(data-form-output="", data-form-type='contact', method='post')
+                .form-flex-inline-item
+                  label.form-label-outside From
+                  .form-wrap.form-wrap-inline
+                    input.form-input#forms-current-location(type="text" name="current-location" data-constraints="@Required")
+                    label.form-label(for="forms-current-location") Your current location
+                .form-flex-inline-item
+                  label.form-label-outside To
+                  .form-wrap.form-wrap-inline
+                    input.form-input#forms-current-destination(type="text" name="current-destination" data-constraints="@Required")
+                    label.form-label(for="forms-current-destination") Your destination
+                .form-flex-inline-item.form-flex-inline-item-static
+                  label.form-label-outside Taxi Type 
+                  .form-wrap
+                    // Select 2
+                    select.form-control.select-filter(data-placeholder="All", data-minimum-results-for-search="Infinity", data-constraints="@Selected", name='city')
+                      option(label=' ')
+                      option(value="1" selected='') Standard 
+                      option(value="2") Business
+                      option(value="3") Minivan
+                      option(value="4") Truck
+                .form-flex-inline-item.form-flex-inline-item-custom
+                  .form-button
+                    button.button.button-secondary.button-nina(type='submit') search
+
+  section.section.section-lg.text-center.bg-white
+    .shell.shell-wide
+      h3 car types
+      .divider.divider-default
+      .range.range-lg.range-50            
+        // Pricing Box XL
+        .cell-sm-6.cell-lg-3
+          .box-price-info
+            .box-price-info-image
+              +png('car-01-210x72')
+              
+          .pricing-box.pricing-box-xl.pricing-box-novi
+            .pricing-box-header
+              h4 basic
+            .pricing-box-price
+              .heading-2
+                sup $
+                | 1.25/km
+            a.button.button-sm.button-secondary.button-nina(href='#') order now
+            .pricing-box-body
+              ul.pricing-box-list
+                li
+                  .unit.unit-spacing-sm.unit-horizontal.unit-middle
+                    .unit-left: span.icon.icon-md-big.icon-primary.mdi.mdi-earth
+                    .unit-body: span Lots of locations
+                li
+                  .unit.unit-spacing-sm.unit-horizontal.unit-middle
+                    .unit-left: span.icon.icon-md-big.icon-primary.mdi.mdi-av-timer
+                    .unit-body: span Waiting for over 10 min
+                li
+                  .unit.unit-spacing-sm.unit-horizontal.unit-middle
+                    .unit-left: span.icon.icon-md-big.icon-primary.mdi.mdi-smoking
+                    .unit-body: span Smoking/Non-smoking car
+                li.inactive
+                  .unit.unit-spacing-sm.unit-horizontal.unit-middle
+                    .unit-left: span.icon.icon-md-big.icon-primary.mdi.mdi-weight
+                    .unit-body: span Luggage transportation
+                li.inactive
+                  .unit.unit-spacing-sm.unit-horizontal.unit-middle
+                    .unit-left: span.icon.icon-md-big.icon-primary.mdi.mdi-baby
+                    .unit-body: span Baby seat
+                li.inactive
+                  .unit.unit-spacing-sm.unit-horizontal.unit-middle
+                    .unit-left: span.icon.icon-md-big.icon-primary.mdi.mdi-cat
+                    .unit-body: span Animal transportation
+
+        // Pricing Box XL
+        .cell-sm-6.cell-lg-3
+          .box-price-info
+            .box-price-info-image
+              +png('car-02-255x77')
+              
+          .pricing-box.pricing-box-xl.pricing-box-novi
+            .pricing-box-header
+              h4 business
+            .pricing-box-price
+              .heading-2
+                sup $
+                | 1.50/km
+            a.button.button-sm.button-secondary.button-nina(href='#') order now
+            .pricing-box-body
+              ul.pricing-box-list
+                li
+                  .unit.unit-spacing-sm.unit-horizontal.unit-middle
+                    .unit-left: span.icon.icon-md-big.icon-primary.mdi.mdi-earth
+                    .unit-body: span Lots of locations
+                li
+                  .unit.unit-spacing-sm.unit-horizontal.unit-middle
+                    .unit-left: span.icon.icon-md-big.icon-primary.mdi.mdi-av-timer
+                    .unit-body: span Waiting for over 10 min
+                li
+                  .unit.unit-spacing-sm.unit-horizontal.unit-middle
+                    .unit-left: span.icon.icon-md-big.icon-primary.mdi.mdi-smoking
+                    .unit-body: span Smoking/Non-smoking car
+                li
+                  .unit.unit-spacing-sm.unit-horizontal.unit-middle
+                    .unit-left: span.icon.icon-md-big.icon-primary.mdi.mdi-weight
+                    .unit-body: span Luggage transportation
+                li.inactive
+                  .unit.unit-spacing-sm.unit-horizontal.unit-middle
+                    .unit-left: span.icon.icon-md-big.icon-primary.mdi.mdi-baby
+                    .unit-body: span Baby seat
+                li.inactive
+                  .unit.unit-spacing-sm.unit-horizontal.unit-middle
+                    .unit-left: span.icon.icon-md-big.icon-primary.mdi.mdi-cat
+                    .unit-body: span Animal transportation
+
+
+        // Pricing Box XL
+        .cell-sm-6.cell-lg-3
+          .box-price-info
+            .box-price-info-image
+              +png('car-03-245x92')
+              
+          .pricing-box.pricing-box-xl.pricing-box-novi
+            .pricing-box-header
+              h4 MINIVAN
+            .pricing-box-price
+              .heading-2
+                sup $
+                | 2.00/km
+            a.button.button-sm.button-secondary.button-nina(href='#') order now
+            .pricing-box-body
+              ul.pricing-box-list
+                li
+                  .unit.unit-spacing-sm.unit-horizontal.unit-middle
+                    .unit-left: span.icon.icon-md-big.icon-primary.mdi.mdi-earth
+                    .unit-body: span Lots of locations
+                li
+                  .unit.unit-spacing-sm.unit-horizontal.unit-middle
+                    .unit-left: span.icon.icon-md-big.icon-primary.mdi.mdi-av-timer
+                    .unit-body: span Waiting for over 10 min
+                li
+                  .unit.unit-spacing-sm.unit-horizontal.unit-middle
+                    .unit-left: span.icon.icon-md-big.icon-primary.mdi.mdi-smoking
+                    .unit-body: span Smoking/Non-smoking car
+                li
+                  .unit.unit-spacing-sm.unit-horizontal.unit-middle
+                    .unit-left: span.icon.icon-md-big.icon-primary.mdi.mdi-weight
+                    .unit-body: span Luggage transportation
+                li
+                  .unit.unit-spacing-sm.unit-horizontal.unit-middle
+                    .unit-left: span.icon.icon-md-big.icon-primary.mdi.mdi-baby
+                    .unit-body: span Baby seat
+                li.inactive
+                  .unit.unit-spacing-sm.unit-horizontal.unit-middle
+                    .unit-left: span.icon.icon-md-big.icon-primary.mdi.mdi-cat
+                    .unit-body: span Animal transportation
+
+        // Pricing Box XL
+        .cell-sm-6.cell-lg-3
+          .box-price-info
+            .box-price-info-image
+              +png('car-04-279x93')
+              
+          .pricing-box.pricing-box-xl.pricing-box-novi
+            .pricing-box-header
+              h4 TRUCK
+            .pricing-box-price
+              .heading-2
+                sup $
+                | 3.00/km
+            a.button.button-sm.button-secondary.button-nina(href='#') order now
+            .pricing-box-body
+              ul.pricing-box-list
+                li
+                  .unit.unit-spacing-sm.unit-horizontal.unit-middle
+                    .unit-left: span.icon.icon-md-big.icon-primary.mdi.mdi-earth
+                    .unit-body: span Lots of locations
+                li
+                  .unit.unit-spacing-sm.unit-horizontal.unit-middle
+                    .unit-left: span.icon.icon-md-big.icon-primary.mdi.mdi-av-timer
+                    .unit-body: span Waiting for over 10 min
+                li
+                  .unit.unit-spacing-sm.unit-horizontal.unit-middle
+                    .unit-left: span.icon.icon-md-big.icon-primary.mdi.mdi-smoking
+                    .unit-body: span Smoking/Non-smoking car
+                li
+                  .unit.unit-spacing-sm.unit-horizontal.unit-middle
+                    .unit-left: span.icon.icon-md-big.icon-primary.mdi.mdi-weight
+                    .unit-body: span Luggage transportation
+                li
+                  .unit.unit-spacing-sm.unit-horizontal.unit-middle
+                    .unit-left: span.icon.icon-md-big.icon-primary.mdi.mdi-baby
+                    .unit-body: span Baby seat
+                li
+                  .unit.unit-spacing-sm.unit-horizontal.unit-middle
+                    .unit-left: span.icon.icon-md-big.icon-primary.mdi.mdi-cat
+                    .unit-body: span Animal transportation
+
+  section.section-2-columns.bg-gray-lighter.bg-additional-gray-darker: .shell-custom
+    .range.range-sm-center.range-md-middle.range-lg-left.range-0
+      .cell-sm-10.cell-md-6: .section-lg
+        .shell-custom-inner
+          h3 What people say
+          hr.divider.divider-default
+          .slider-widget
+            .slick-slider#slick-1(data-arrows="true", data-loop="true", data-dots="false", data-swipe="false", data-items="1" data-custom-arrows='true')
+              .item
+                article.quote-classic
+                  .quote-classic-header
+                    +jpg('quote-taxi-1-103x107', 'quote-classic-image')
+                    .quote-classic-meta
+                      p.quote-classic-cite Mary McMillan
+                      p.quote-classic-small Regular Customer
+                  .quote-classic-text
+                    p Just wanted to say how satisfied I was with the driver James, he was friendly and drove very well. The car was excellent and I will recommend your service. I think every American state needs such taxi service. Thank you!
+
+              .item
+                article.quote-classic
+                  .quote-classic-header
+                    +jpg('quote-taxi-2-107x111', 'quote-classic-image')
+                    .quote-classic-meta
+                      p.quote-classic-cite James Smith
+                      p.quote-classic-small Regular Customer
+                  .quote-classic-text
+                    p I am very apprehensive about taxi rides because I have not had pleasant experiences before. You were different because your driver was friendly and courteous. You provide exceptional taxi services.
+
+              .item
+                article.quote-classic
+                  .quote-classic-header
+                    +jpg('quote-taxi-3-109x112', 'quote-classic-image')
+                    .quote-classic-meta
+                      p.quote-classic-cite Susan Contreras
+                      p.quote-classic-small Regular Customer
+                  .quote-classic-text
+                    p I am happy to send you this message! Your dispatcher and the driver went out of their way to help me tonight. I left a cell phone in the taxi and they were able to locate it and returned it. Thank you for your amazing service.
+
+            .slider-widget-aside
+              .icon.icon-lg-smaller.mdi.mdi-format-quote
+              .slider-nav
+                button.slick-prev.mdi.mdi-arrow-left-bold-circle(type='button', data-slick='slick-1')
+                button.slick-next.mdi.mdi-arrow-right-bold-circle(type='button', data-slick='slick-1')
+
+      .cell-md-6.bg-additional-item: .section-lg
+        .shell-custom-inner.shell-custom-inner-1.text-center
+          .range.range-120
+            .cell-xs-6.cell-sm-3.cell-md-6
+              +counter("Cars", "", {
+                "dataTo": "500",
+                "dataSpeed": "1000",
+                "attr": "",
+                "preffix": '+'
+              }, "heading-3", 'mdi mdi-car')
+
+            .cell-xs-6.cell-sm-3.cell-md-6
+              +counter("Happy Clients", "", {
+                "dataTo": "246000",
+                "dataSpeed": "3000",
+                "attr": ""
+              }, "heading-3", 'mdi mdi-account-multiple-outline')
+
+            .cell-xs-6.cell-sm-3.cell-md-6
+              +counter("Working <br> Hours", "", {
+                "dataTo": "2500",
+                "dataSpeed": "3000",
+                "attr": "",
+                "preffix": '+'
+              }, "heading-3", 'mdi mdi-clock')
+
+            .cell-xs-6.cell-sm-3.cell-md-6
+              +counter("Rides", "", {
+                "dataTo": "12000",
+                "dataSpeed": "3000",
+                "attr": ""
+              }, "heading-3",'mdi mdi-checkbox-marked-circle-outline')
+
+  ="\n"
+
+  section.section.section-lg.section-2-columns.bg-white.section-reverse
+    .shell.shell-bigger
+      .range.range-ten.range-50.range-sm-center.range-lg-justify
+        .cell-sm-9.cell-md-5.cell-xl-5
+          h3 COMMON QUESTIONS
+          // Bootstrap collapse
+          .divider.divider-default
+          #accordion2.panel-group.panel-group-custom.panel-group-light(role='tablist', aria-multiselectable='false')
+            +panel({
+              first: true,
+              panelClass: 'panel-light',
+              parentId: 'accordion2',
+              number: '1',
+              header: 'How do I pre-book a cab?'
+            })
+              p You can pre-book a cab through our website or by calling our office at toll free number which you can find on our website. Or simply download our App to your Android phone or iPhone - it is the easiest way to book a cab.
+
+
+            +panel({
+              panelClass: 'panel-light',
+              parentId: 'accordion2',
+              number: '2',
+              header: 'How can I order a taxi?'
+            })
+              p Ordering our taxi is easy! Since you are already here you can book your trip now using our website. Ordering a taxi online saves you time, because the details of your trip are automatically entered. Or you can book a taxi on your smartphone or mobile device, using our booking app.
+
+
+            +panel({
+              panelClass: 'panel-light',
+              parentId: 'accordion2',
+              number: '3',
+              header: 'How can I pay for my transfer in the taxi?'
+            })
+              p We accept cash and major credit cards - Visa, MasterCard, and American Express.
+
+
+            +panel({
+              panelClass: 'panel-light',
+              parentId: 'accordion2',
+              number: '4',
+              header: 'How do I recognize your taxis?'
+            })
+              p All our taxis are dark yellow and they have our logo clearly displayed both on the bonnet and on the sides. On the lantern you should look for a yellow circle in the middle off the word TAXI.
+
+        .cell-sm-9.cell-md-5.cell-xl-5
+          figure.image-default: +jpg('taxi-landing-1-640x470')
+  ="\n"
+
+
+  // Blog posts
+  section.section.section-lg.bg-gray-lighter.text-center
+    .shell-wide
+      .range: .cell-xs-12
+        h3 Latest blog posts
+        .divider.divider-default
+        // Owl Carousel
+        .owl-carousel.owl-carousel-team.owl-carousel-inset(data-items='1', data-sm-items='2', data-lg-items='3', data-stage-padding='15', data-loop='true', data-margin='30', data-mouse-drag="false" data-dots='true')
+          article.post-blog
+            a(href=postLink).post-blog-image
+              +jpg('landing-taxi-7-570x415')
+            .post-blog-caption
+              .post-blog-caption-header
+                ul.post-blog-tags
+                  li: a(href=postLink).button-tags news
+                ul.post-blog-meta
+                  li
+                    span by
+                    | &nbsp;
+                    a(href='single-post.html') Ronald Chen
+              .post-blog-caption-body
+                h5: a(href=postLink).post-blog-title Taxi Business Profits: How to Quickly Improve Cash Flow of Your Taxi Business
+
+              .post-blog-caption-footer
+                time(datetime='2017') Feb 27, 2017 at 6:53 pm
+                a(href=postLink).post-comment
+                  span.icon.icon-md-middle.icon-gray-1.mdi.mdi-comment
+                  span 12
+
+          article.post-blog
+            a(href='image-post.html').post-blog-image
+              +jpg('landing-taxi-8-570x415')
+            .post-blog-caption
+              .post-blog-caption-header
+                ul.post-blog-tags
+                  li: a(href='image-post.html').button-tags news
+                ul.post-blog-meta
+                  li
+                    span by
+                    | &nbsp;
+                    a(href='single-post.html') Ronald Chen
+              .post-blog-caption-body
+                h5: a(href='image-post.html').post-blog-title When You Run a Taxi Company, You Can Only Expect What You Inspect
+
+              .post-blog-caption-footer
+                time(datetime='2017') Feb 27, 2017 at 6:53 pm
+                a(href='image-post.html').post-comment
+                  span.icon.icon-md-middle.icon-gray-1.mdi.mdi-comment
+                  span 12
+
+          article.post-blog
+            a(href='audio-post.html').post-blog-image
+              +jpg('landing-taxi-9-570x415')
+            .post-blog-caption
+              .post-blog-caption-header
+                ul.post-blog-tags
+                  li: a(href='audio-post.html').button-tags news
+                ul.post-blog-meta
+                  li
+                    span by
+                    | &nbsp;
+                    a(href='single-post.html') Ronald Chen
+              .post-blog-caption-body
+                h5: a(href='audio-post.html').post-blog-title How to Run a Taxi Service: Preventing Negative Word Of Mouth Marketing
+
+              .post-blog-caption-footer
+                time(datetime='2017') Feb 27, 2017 at 6:53 pm
+                a(href='audio-post.html').post-comment
+                  span.icon.icon-md-middle.icon-gray-1.mdi.mdi-comment
+                  span 12
+      a.button.button-secondary.button-nina(href=blogLink) view all blog posts
+
+  ="\n" 
+
+  +footer-extended({
+    className: 'bg-gray-darker',
+    instaType : 'tagged',
+    tagName : 'bTaxiTM'
+  })

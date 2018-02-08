@@ -1,0 +1,82 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_contact-form
+include ../elements/_ui-maps
+
+block variables
+  - var activeIndex = 6
+  - var pageName = 'Contacts'
+ 
+block page
+  // Page Header
+  +breadcrumbs-header({ headerClass: 'breadcrumbs-background-01',
+    text: "Get in Touch with Us",
+    path: [[menu[activeIndex].title, menu[activeIndex].link], ['Contacts']]
+  })
+  
+  // Contact info
+  section.section.section-lg.bg-white.text-center
+    
+    .shell.shell-wide
+      .range.range-50.range-custom-bordered
+        .cell-xs-6.cell-md-3
+          // Box minimal
+          article.box-simple
+            .box-simple-icon.mdi.mdi-map-marker
+            h6 Address
+            .box-simple-text
+              a(href='#') 2130 Fulton Street, Chicago, IL #[br] 94117-1080 USA
+              
+        .cell-xs-6.cell-md-3
+          // Box simple
+          article.box-simple
+            .box-simple-icon.mdi.mdi-phone
+            h6 phone
+            .box-simple-text
+              ul.list-comma.list-0
+                li: a(href='callto:#') 1-800-6543-765
+                li: a(href='callto:#') 1-800-3434-876
+        .cell-xs-6.cell-md-3  
+          // Box simple
+          article.box-simple
+            .box-simple-icon.mdi.mdi-email-open
+            h6 e-mail
+            .box-simple-text
+              a(href='mailto:#') mail@demolink.org
+              
+        .cell-xs-6.cell-md-3
+          // Box simple
+          article.box-simple
+            .box-simple-icon.mdi.mdi-calendar-clock
+            h6 opening hours
+            .box-simple-text
+              ul.list-0
+                li Mon–Fri: 9:00 am–6:00 pm
+                li Sat–Sun: 11:00 am–4:00 pm
+            
+  ="\n"
+
+  // Contact us
+  section.section.section-wrap.bg-gray-lighter: .section-wrap-inner.section-lg
+    .shell.shell-bigger
+      .range.range-50
+        .cell-md-8.cell-lg-7
+          .section-wrap-content
+            h3 Contact us
+            hr.divider.divider-left.divider-default
+            p.big You can contact us any way that is convenient for you. We are available 24/7 via fax or email. You can also use a quick contact form below or visit our office personally.
+            +contact-form
+
+    .section-wrap-aside
+      // RD Google Map
+      .rd-google-map.rd-google-map-with-icon(class="rd-google-map__model", data-zoom='15', data-y='40.643180', data-x='-73.9874068', data-styles='')
+        ul.map_locations
+          li(data-y='40.643180', data-x='-73.9874068')
+            p.text-center 2130 Fulton Street
+              br
+              | San Diego, CA 94117-1080 USA
+  ="\n"
+  
+  // Page Footer
+  +footer-minimal({className: 'bg-gray-darker'})

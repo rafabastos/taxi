@@ -1,0 +1,14 @@
+include ../elements/_subscribe-form
+
+// Modal
+#subscribe-notification.notification.modal.modal-custom.fade.slideRight(tabindex='-1', role='dialog')
+  .modal-dialog(role='document')
+    .modal-content
+      .modal-header
+        button.close(type='button', data-dismiss='modal', aria-label='Close')
+          span(aria-hidden='true')
+        h4.modal-title Newsletter
+      .modal-body
+        p Keep up with our always upcoming product features and technologies.#[br.veil.reveal-sm-inline] Enter your e-mail and subscribe to our newsletter.
+        // Campaign Monitor
+        +subscribe-form

@@ -1,0 +1,31 @@
+extends  ../_skeleton
+
+block variables
+  - var activeIndex = 5
+  - var pageName = 'Search Results'
+
+block page
+  // Page Header
+  +breadcrumbs-header({ headerClass: 'breadcrumbs-background-01',
+    text: "Easy Search",
+    path: [[menu[activeIndex].title, menu[activeIndex].link], [pageName]]
+  })
+
+  //Search results
+  section.section.section-lg.bg-white
+    
+    .shell-wide
+      .range.range-center
+        .cell-md-9.cell-xl-6
+          form.rd-search.rd-mailform-inline.rd-mailform-sm.rd-mailform-inline-modern(action="search-results.html" method="GET")
+            .rd-mailform-inline-inner
+              div.form-wrap
+                label.form-label(for="rd-navbar-search-form-input-1" class="form-label") Search...
+                input(class="rd-navbar-search-form-input form-input" id="rd-navbar-search-form-input-1" type="text" name="s" autocomplete="off")
+              button.rd-search-form-submit.button.button-secondary.button-xs search
+
+          .rd-search-results
+  ="\n"
+            
+  // Page Footer
+  +footer-extended({     className: 'bg-gray-darker',     instaType : 'tagged',     tagName : 'bTaxiTM'   })

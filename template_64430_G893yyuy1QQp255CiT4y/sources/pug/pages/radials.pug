@@ -1,0 +1,41 @@
+extends  ../_skeleton
+
+block variables
+  - var activeIndex = 5
+  - var pageName = 'Radials' 
+
+block page
+  // Page Header
+  +breadcrumbs-header({ headerClass: 'breadcrumbs-background-01',
+    text: "Choose Your Style",
+    path: [[menu[activeIndex].title, menu[activeIndex].link], [pageName]]
+  })
+
+  // Classic Bar
+  section.section.section-lg.bg-white.text-center
+    
+    .shell
+      h3 classic bar
+      // Circle Progress Bar
+      .progress-bar-circle.progress-bar-circle-classic(data-value="0.8", data-gradient="#ff654e, #ff654e", data-empty-fill="rgb(255,255,255)", data-size="140", data-thickness="4"): span 5
+
+  ="\n"
+
+  // alternative bar
+  section.section.section-lg.bg-white.text-center
+    .shell
+      h3 alternative bar
+      // Circle Progress Bar
+      .progress-bar-circle(data-value="0.8", data-gradient="#ff654e, #ff654e", data-empty-fill="rgb(242,243,249)", data-size="140", data-thickness="6"): span 5 
+
+
+  // alternative bar
+  section.section.section-lg.bg-white.text-center
+    .shell
+      h3 modern bar
+      // Circle Progress Bar
+      .progress-bar-circle(data-value="0.8", data-gradient="#ff654e, #ff654e", data-empty-fill="rgb(242,243,249)", data-size="140", data-thickness="12", data-line-cap='round'): span 5
+
+  ="\n"
+  // Page Footer
+  +footer-extended({     className: 'bg-gray-darker',     instaType : 'tagged',     tagName : 'bTaxiTM'   })

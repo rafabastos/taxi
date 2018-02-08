@@ -1,0 +1,75 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-team-classic
+include ../elements/_ui-gallery-item
+
+block variables
+  - var activeIndex = 5
+  - var pageName = 'Careers'
+
+block page
+  // Page Header
+  +breadcrumbs-header({ headerClass: 'breadcrumbs-background-01',
+    text: 'Join Our Team',
+    path: [[menu[activeIndex].title, menu[activeIndex].link], [pageName]]
+  })
+
+  // Welcome to Our Taxi
+  section.section.section-lg.bg-white
+    
+    .shell.shell-bigger
+      .range.range-ten.range-50.range-sm-center.range-md-middle.range-lg-justify.range-md-reverse
+        .cell-sm-9.cell-md-5.cell-lg-4
+          h3 We're always looking
+            br.veil.reveal-xl-block
+            =" "
+            | for drivers
+          .divider.divider-default
+          p.heading-5 City-Taxi is constantly looking for the brightest and the best to join our team. It's an exciting time for the entire business as we are in a period of intensive growth.
+          p.text-spacing-sm So, if you think you'd like to join our team, simply take a look at the vacancies below. If you can’t see a role that suits you, upload your CV to our Recruitment Centre and if a suitable role becomes vacant, we'll get in touch with you. We publish new vacancies daily!
+        .cell-sm-9.cell-md-5
+          +jpg('about-us-1-720x459')
+  ="\n"
+
+
+
+  // Small Features
+  section.section.section-lg.text-center.text-sm-left.bg-gray-lighter
+    .shell-wide
+      .range.range-50.range-xs-center.text-gray-light
+        .cell-xs-10.cell-sm-4
+          .box-accent
+            h6 Entry requirements
+            p A good job isn't just about the paycheck and insurance benefits. Most people want to feel like their work is contributing to the greater good of the world. and that’s exactly what we give our team members. At the end of the day, every employee feels that he/she is the part of not just a team but a family.
+        .cell-xs-10.cell-sm-4
+          .box-accent
+            h6 Skills required
+            p There are multiple benefits available to our employees, both experienced and new. Every employee has a challenging and fulfilling role in a great team, while dealing with great clients and rewarding tasks. We provide our team members with free access to our social events and corporate benefits.
+        .cell-xs-10.cell-sm-4
+          .box-accent
+            h6 What you'll do
+            p Working at Luxury Taxi gives our employees a chance to challenge themselves and learn something new, while also communicating with important people in the industry. We also organize refresher courses that allow our junior employees to extend their skills and explore the taxi industry.
+
+  // Current Opennings
+  section.section.section-lg.bg-white.text-center
+    .shell.shell-wide
+      h3 Current Openings
+      .divider.divider-default
+      .range.range-30.range-center.text-left
+        include ../elements/_openings-1
+        include ../elements/_openings-2
+
+
+
+  // CTA Gradient
+  section.section.section-xs.text-center.bg-gradient-1
+    .shell-wide
+      .box-cta-thin
+        p.big
+          span We’ll take you wherever you need. Fast. Safe. On time.
+          | &nbsp;
+          a(href='contacts.html').link-bold Contact us now!  
+  ="\n"
+
+  +footer-extended({     className: 'bg-gray-darker',     instaType : 'tagged',     tagName : 'bTaxiTM'   })

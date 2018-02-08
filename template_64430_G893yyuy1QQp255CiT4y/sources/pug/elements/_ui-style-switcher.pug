@@ -1,0 +1,19 @@
+mixin style-switcher(obj)
+  // Style switcher
+  .style-switcher(data-container=obj.targetContainer ? obj.targetContainer : '')
+    if ( typeof(obj.styleList) !== 'undefined')
+      - switcherCounter += 1
+      .style-switcher-panel-wrap
+        button.button.button-secondary.style-switcher-panel-control(data-custom-toggle='#style-switcher-panel-' + switcherCounter, data-custom-toggle-disable-on-blur='true') Choose style
+        ul.style-switcher-panel(id='style-switcher-panel-' + switcherCounter)
+          - for (var i = 0; i < obj.styleList.length; i++)
+              -var customizeClasses = obj.styleList[i].classes.join(' ');
+              li(class={active: i == obj.activeStyle}): button.button.button-nina(type='button', data-customize-class=customizeClasses)=obj.styleList[i].name
+      
+    .style-switcher-container
+      .style-switcher-toggle-wrap 
+        if ( obj.includeSwitchButton != false)  
+          button.button.button-xs.button-secondary.button-icon.button-icon-left.button-nina.style-switcher-toggle
+            span.icon.mdi.mdi-swap-horizontal
+            | Switch sides
+      block 

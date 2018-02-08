@@ -1,0 +1,85 @@
+// Fotter Alternative
+footer.section.page-footer.page-footer-alternative
+  .shell-wide
+    .range.range-50.range-xs-center.range-lg-justify
+      .cell-sm-6.cell-lg-3
+        h6 twitter feed
+        .twitter(data-twitter-username='templatemonster')
+          - for (var i = 0; i < 2 ; i++)
+            .twitter-feed-minimal(data-twitter-type='tweet')
+              .unit.unit-xs-horizontal
+                .unit-left
+                  span.mdi.mdi-twitter.twitter-icon.icon-md-middle
+                .unit-body
+                  .twitter-feed-minimal-content(data-tweet='text')
+                  time(data-date="text" data-datetime="datetime" datetime="2017")
+
+      .cell-sm-6.cell-lg-3
+        h6 Instagram feed
+        .instafeed.text-center(data-instafeed-user='25025320', data-instafeed-get='user', data-instafeed-sort='most-liked' data-lightgallery='group')
+          .range.range-10.range-narrow
+            - for (var i = 0; i < 6 ; i++)
+              .cell-xxs-4(data-instafeed-item='')
+                +thumbnail-instafeed-big({className: 'thumbnail-instafeed-minimal'})
+
+
+
+      .cell-sm-6.cell-lg-3
+        h6 contact US
+        ul.list-xs.list-darker
+          li.box-inline
+            span.icon.icon-md-smaller.icon-primary.mdi.mdi-map-marker
+            a(href='#') 2130 Fulton Street, Chicago,
+              br
+              | &nbsp;
+              | IL 94117-1080 USA
+
+          li.box-inline
+            span.icon.icon-md-smaller.icon-primary.mdi.mdi-phone
+            ul.list-comma
+              li: a(href='callto:#') 1-800-1234-567
+              br
+              li: a(href='callto:#') 1-800-6780-345
+          li.box-inline
+            span.icon.icon-md-smaller.icon-primary.mdi.mdi-email-open
+            a(href='mailto:#') mail@demolink.org
+        ul.group
+          li: a.icon.icon-sm-bigger.icon-gray-light.mdi.mdi-facebook(href='#')
+          li: a.icon.icon-sm-bigger.icon-gray-light.mdi.mdi-twitter(href='#')
+          li: a.icon.icon-sm-bigger.icon-gray-light.mdi.mdi-instagram(href='#')
+          li: a.icon.icon-sm-bigger.icon-gray-light.mdi.mdi-google(href='#')
+          li: a.icon.icon-sm-bigger.icon-gray-light.mdi.mdi-linkedin(href='#')
+
+
+
+      .cell-sm-6.cell-lg-3
+        h6 newsletter
+        p.text-spacing-sm Keep up with our always upcoming product features and technologies. Enter your e-mail and subscribe to our newsletter.
+        form.campaign-mailform.rd-mailform-inline.rd-mailform-sm.text-left(data-form-output="form-output-global", action='http://templatemonster1.createsend.com/t/d/s/xlyhhk/' method='post')
+          .form-wrap
+            input#footer-alternative-newsletter.form-input(type="email" name='cm-xlyhhk-xlyhhk' data-constraints="@Email @Required")
+            label.form-label(for="footer-alternative-newsletter") Enter your e-mail
+          button.button.form-button.button-sm.button-secondary.button-nina(type="submit") subscribe
+
+
+    ul.list-marked.list-marked-primary.list-novi
+      li: a(href='about.html') About
+      li: a(href='services.html') Services
+      li: a(href='shop-4-columns-layout.html') Shop
+      li: a(href='classic-blog.html') Blog
+      li: a(href='grid-gallery-outside-title.html') Portfolio
+      li: a(href='contacts.html') Contacts
+
+    p.right
+      | &#169; #[span(class="copyright-year")] All Rights Reserved
+      | &nbsp;
+      a(href="#") Terms of Use
+      | &nbsp;
+      span and
+      | &nbsp;
+      a(href="privacy.html") Privacy Policy
+    if(footerLink)
+      // {%FOOTER_LINK}
+
+
+

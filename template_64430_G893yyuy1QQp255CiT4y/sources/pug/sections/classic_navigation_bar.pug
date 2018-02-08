@@ -1,0 +1,21 @@
+extends  ../_skeleton
+
+//- Header types includes
+include ../elements/_ui-header-types
+
+block variables
+  - var activeIndex = 2
+  - var pageName = 'Navigation bar classic'
+
+block page
+  
+  +classic-navigation({
+    text: "Secondary Title", 
+    activeItemName: 'main title',
+    path: [[menu[activeIndex].title, menu[activeIndex].link], [pageName]]
+  })
+
+  section.section.bg-white
+    
+
+  +disable-events 

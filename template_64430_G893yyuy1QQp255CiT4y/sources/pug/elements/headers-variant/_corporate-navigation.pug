@@ -1,0 +1,65 @@
+header.section.page-header
+  // RD Navbar
+  .rd-navbar-wrap.rd-navbar-corporate
+    nav.rd-navbar(data-layout='rd-navbar-fixed', data-sm-layout='rd-navbar-fixed', data-md-layout='rd-navbar-fullwidth', data-md-device-layout='rd-navbar-fixed', data-lg-layout='rd-navbar-static', data-lg-device-layout="rd-navbar-static",  data-md-stick-up-offset="130px", data-lg-stick-up-offset="100px" data-stick-up='true' data-sm-stick-up='true' data-md-stick-up='true' data-lg-stick-up='true')
+      .rd-navbar-collapse-toggle(data-rd-navbar-toggle='.rd-navbar-collapse')
+        span
+      .rd-navbar-top-panel.rd-navbar-collapse
+        .rd-navbar-top-panel-inner
+          ul.list-inline
+            li.box-inline
+              span.icon.icon-md-smaller.icon-gray-light.mdi.mdi-phone
+              ul.list-comma
+                li: a(href='callto:#') 1-800-1234-567
+                li: a(href='callto:#') 1-800-6780-345
+
+            li.box-inline
+              span.icon.icon-md-smaller.icon-gray-light.mdi.mdi-map-marker
+              a(href='#') 2130 Fulton Street, San Diego, CA 94117-1080 USA
+
+            li.box-inline
+              span.icon.icon-md-smaller.icon-gray-light.mdi.mdi-email
+              a(href='mailto:#') mail@demolink.org
+
+          +list-inline-icon({
+            list_class: 'list-inline',
+            items: [
+              "icon-sm-bigger icon-gray-1 mdi mdi-facebook",
+              "icon-sm-bigger icon-gray-1 mdi mdi-twitter",
+              'icon-sm-bigger icon-gray-1 mdi mdi-instagram',
+              'icon-sm-bigger icon-gray-1 mdi mdi-google-plus',
+              'icon-sm-bigger icon-gray-1 mdi mdi-linkedin'
+            ]
+          })
+        .rd-navbar-top-panel-inner
+          a(href=getTemplateLink target='_blank').button.button-sm.button-secondary.button-nina buy template now
+
+      .rd-navbar-inner
+        // RD Navbar Panel
+        .rd-navbar-panel
+          // RD Navbar Toggle
+          button.rd-navbar-toggle(data-rd-navbar-toggle='.rd-navbar-nav-wrap'): span
+
+          // RD Navbar Brand
+          .rd-navbar-brand
+            a.brand-name(href='index.html')
+              +png(logoDefault, 'logo-default')
+              +png(logoInverse, 'logo-inverse')
+
+        .rd-navbar-aside-center
+          .rd-navbar-nav-wrap
+            include ../../_navigation
+          .rd-navbar-aside-right-inner
+            // RD Navbar Search
+            .rd-navbar-search
+              a.rd-navbar-search-toggle(data-rd-navbar-toggle=".rd-navbar-search" href="#")
+                span
+              form.rd-search(action="search-results.html" data-search-live="rd-search-results-live" method="GET")
+                div.form-wrap
+                  label.form-label(for="rd-navbar-search-form-input" class="form-label") Search...
+                  input(class="rd-navbar-search-form-input form-input" id="rd-navbar-search-form-input" type="text" name="s" autocomplete="off")
+                  .rd-search-results-live
+                button.rd-search-form-submit.mdi.mdi-magnify
+
+        .rd-navbar-aside-right
+          a(href=getTemplateLink target='_blank').button.button-sm.button-secondary.button-nina buy theme now

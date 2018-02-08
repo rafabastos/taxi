@@ -1,0 +1,159 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_pricings
+include ../elements/_ui-panel
+include ../elements/_ui-thumbnail-classic
+
+block variables
+  - var activeIndex = 2
+  - var pageName = 'Single Service'
+
+block page
+  // Page Header
+  +breadcrumbs-header({ headerClass: 'breadcrumbs-background-01',
+    text: "Single Service Page",
+    title: 'Transfers',
+    path: [[menu[activeIndex].title, menu[activeIndex].link], [pageName]]
+  })
+
+  // about service
+  section.section.section-lg.text-center.text-sm-left.bg-white
+    
+    .shell.shell-bigger
+      .range.range-ten.range-50.range-sm-center.range-lg-justify
+        .cell-sm-8.cell-lg-4 
+          h3 about this service
+          .divider.divider-default
+          p Looking for a reliable and affordable airport shuttle service? We can offer you what you really need. Our shuttle service is valued for its safety and safety. From share ride vans to private shuttle buses, we can provide you with a number of possible vehicle options.
+          // Quote minimal
+          article.quote-minimal
+            p.quote-minimal-text Our high-quality comfortable airport transfer can  provide you with trouble-free traveling experience.
+          p We've had thousands of satisfied customers compliment their courteous drivers and on time pick up and drop off service over the years. With us you can save money and get high-quality service. 
+          a.button.button-secondary.button-nina(href='#') order now
+
+        .cell-lg-5.text-center
+          include ../elements/_ui-blick-imac
+  ="\n"
+
+  section.section.section-lg.text-center.bg-image.bg-image-7
+    .shell-wide
+      .range.range-xs-center.range-50
+        .cell-sm-9.cell-md-6.cell-lg-3
+          +thumbnail-classic({
+            icon_class: 'mdi mdi-road-variant',
+            title: 'local routes',
+            text: 'Looking for an affordable and easy way to reach another part of the city or state? We’ve got you covered with our local taxi services.'
+          })
+
+        .cell-sm-9.cell-md-6.cell-lg-3
+          +thumbnail-classic({
+            icon_class: 'mdi mdi-map',
+            title: 'abroad travels',
+            text: 'We provide not only airport transfer services for international travelers but also a wide variety of supplemental taxi services abroad.'
+          })
+
+        .cell-sm-9.cell-md-6.cell-lg-3
+          +thumbnail-classic({
+            icon_class: 'mdi mdi-web',
+            title: 'business travels',
+            text: 'Our large capacity, timeliness and great reputation make us your ideal partner for professional and comfortable business travel. We can also make a good impression with your clients.'
+          })
+              
+        .cell-sm-9.cell-md-6.cell-lg-3
+          +thumbnail-classic({
+            icon_class: 'mdi mdi-headset',
+            title: '24/7 online support',
+            text: 'We provide a variety of payment methods that include Paypal, Visa/Mastercard/American Express and lots of others.'
+          })
+
+  section.section.section-lg.text-center.bg-white
+    .shell.shell-bigger
+      h3 testimonials
+      .divider.divider-default
+
+      // Owl Carousel
+      .owl-carousel.owl-layout-1(data-items='1', data-dots='true' data-nav='true' data-stage-padding='0', data-loop='true', data-margin='30', data-mouse-drag="false")
+        article.quote-boxed
+          .quote-boxed-aside: +jpg('quote-user-1-210x210', 'quote-boxed-image')
+          .quote-boxed-main
+            .quote-boxed-text
+              p I am happy to send you this message! Your dispatcher and the driver went out of their way to help me tonight. I left a cell phone in the taxi and they were able to locate it and returned it. I had a very positive experience with the company and will continue to use and recommend them in the future.Thank you for your amazing service.
+
+            .quote-boxed-meta
+              p.quote-boxed-cite Philip Lawrence
+              p.quote-boxed-small Regular Customer
+
+
+        article.quote-boxed
+          .quote-boxed-aside: +jpg('quote-user-2-210x210', 'quote-boxed-image')
+          .quote-boxed-main
+            .quote-boxed-text
+              p I am very apprehensive about taxi rides because I have not had pleasant experiences before. You were different because your driver was friendly and courteous. He shared with us knowledge about the city and places to visit. Everyone in your team was very professional. You provide exceptional taxi services.
+
+            .quote-boxed-meta
+              p.quote-boxed-cite Debra Ortega
+              p.quote-boxed-small Regular Customer
+
+
+        article.quote-boxed
+          .quote-boxed-aside: +jpg('quote-user-3-210x210', 'quote-boxed-image')
+          .quote-boxed-main
+            .quote-boxed-text
+              p Just wanted to say how satisfied I was with the driver James, he was friendly and drove very well. The car was excellent and I will recommend your service. Actually, all vehicles are very modern, clean, and drivers are well groomed and professional. I think every American state needs such taxi service. Thank you!
+
+            .quote-boxed-meta
+              p.quote-boxed-cite Jose Gutierrez
+              p.quote-boxed-small Regular Customer
+
+  section.section.section-lg.bg-gray-lighter.text-center
+    .shell.shell-wide
+      h3 pricing
+      .divider.divider-default
+      +xxl-pricing
+
+  section.section.section-lg.bg-white
+    .shell.shell-bigger
+      .range.range-ten.range-50.range-sm-center.range-lg-justify
+        .cell-sm-9.cell-md-5.cell-xl-5
+          h3 Frequently Asked Questions
+          // Bootstrap collapse
+          #accordion1.panel-group.panel-group-custom.panel-group-corporate(role='tablist', aria-multiselectable='false')
+            +panel({
+              first: true,
+              panelClass: 'panel-corporate',
+              parentId: 'accordion1',
+              number: '1',
+              header: 'How do I pre-book a cab?'
+            })
+              p You can pre-book a cab through our website or by calling our office at toll free number which you can find on our website. Or simply download our App on your Android phone or iPhone - it is the easiest way to book a cab.
+
+            +panel({
+              panelClass: 'panel-corporate',
+              parentId: 'accordion1',
+              number: '2',
+              header: 'How can I order a taxi?'
+            })
+              p Ordering our taxi is easy! Since you are already here you can book your trip now using our website. Ordering a taxi online saves you time, because the details of your trip are automatically entered. Or you can book a taxi on your smartphone or mobile device, using our booking app.
+
+            +panel({
+              panelClass: 'panel-corporate',
+              parentId: 'accordion1',
+              number: '3',
+              header: 'How can I pay for my transfer in the taxi?'
+            })
+              p We accept cash and major credit cards - Visa, MasterCard, and American Express.
+
+            +panel({
+              panelClass: 'panel-corporate',
+              parentId: 'accordion1',
+              number: '4',
+              header: 'How do I recognize your taxis?'
+            })
+              p All our taxis are dark yellow and they have our logo clearly displayed both on the bonnet and on the sides. On the lantern you should look for a yellow circle in the middle off the word TAXI. If you need additional information about our taxis and services, contact us.
+
+        .cell-sm-9.cell-md-5.cell-xl-4
+          figure.image-default: +jpg('accordions-1-570x600')
+
+  // Page Footer
+  +footer-extended({     className: 'bg-gray-darker',     instaType : 'tagged',     tagName : 'bTaxiTM'   })

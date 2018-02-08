@@ -1,0 +1,48 @@
+extends  ../_skeleton
+include ../elements/_pricings
+
+block variables
+  - var activeIndex = 5
+  - var pageName = 'Pricing'
+
+block page
+  // Page Header
+  +breadcrumbs-header({ headerClass: 'breadcrumbs-background-01',
+    text: "Choose Your Style",
+    path: [[menu[activeIndex].title, menu[activeIndex].link], [pageName]]
+  })
+
+  // Standard Pricing
+  section.section.section-lg.bg-white.text-center
+    
+    .shell
+      h3 standard pricing
+      +default-pricing
+
+  ="\n"
+
+  // Alternative Pricing
+  section.section.section-lg.bg-white.text-center
+    .shell
+      h3 Alternative Pricing
+      +alternative-pricing
+  ="\n"
+
+  // 2 columns pricing
+  section.section.section-lg.bg-white.text-center
+    .shell
+      h3 2 columns pricing
+      +columns-pricing
+
+  ="\n"
+
+  // Table Pricing
+  section.section.section-lg.bg-white.text-center
+    .shell.shell-wide
+      h3 table pricing
+      +xxl-pricing
+
+  ="\n"
+
+  // Page Footer
+  +footer-extended({     className: 'bg-gray-darker',     instaType : 'tagged',     tagName : 'bTaxiTM'   })

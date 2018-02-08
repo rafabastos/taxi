@@ -1,0 +1,26 @@
+mixin book(obj)
+  figure.block-with-details(class= obj.bookWrap)
+    .perspective
+      .book(data-book= obj.bookName class= obj.bookClass)
+        .cover
+          .front
+          .inner.inner-left
+        .inner.inner-right
+    if (obj.bookWrap == 'book-info')
+      a.show-details(href='#') Details
+    else
+      a.show-details(href=singleBook) quick view
+    .figcaption
+      h5
+        a(href=singleBook)= obj.bookTitle
+        span= obj.bookPrice
+    if (obj.bookClass == 'book-lg')
+      .details.details-lg
+        ul
+          li= obj.bookInfo
+        span.close-details
+    else
+      .details
+        ul
+          li= obj.bookInfo
+        span.close-details

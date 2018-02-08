@@ -1,0 +1,61 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-team-classic
+include ../elements/_ui-gallery-item
+
+block variables
+  - var activeIndex = 5
+  - var pageName = 'Single Job'
+
+block page
+  // Page Header
+  +breadcrumbs-header({ headerClass: 'breadcrumbs-background-01',
+    title: 'Project Manager',
+    text: 'Careers',
+    path: [[menu[activeIndex].title, menu[activeIndex].link], [pageName]]
+  })
+
+  // Welcome to Our Taxi
+  section.section.section-lg.bg-white
+    
+    .shell.shell-bigger
+      .range.range-ten.range-50.range-sm-center.range-md-middle.range-lg-justify.range-md-reverse
+        .cell-sm-9.cell-md-5.cell-lg-5
+          h3 description
+          .divider.divider-default
+          p.heading-5 If you are a courteous and enthusiastic individual who loves meeting new people, this is the Taxi Cab Driver opportunity for you! 
+          p.text-spacing-sm.text-gray-darker When you drive a taxi - you take the car home with you. We provide regular routine maintenance on our vehicles. You set your hours. You can get work from our dispatch system and/or maintain your own schedule of personal customers. We also provide Direct Deposit to your checking account on a daily basis.
+          p.text-spacing-sm.text-gray-darker As a taxi driver at Luxury Taxi, you will be responsible for operating a vehicle and driving passengers to and from their destinations, greeting passengers, ascertaining destination, watching for traffic signals etc. Your position also requires to:
+          ul.list-marked.text-gray-darker
+            li Ask for directions or determine directions on GPS.
+            li Use knowledge of local streets and traffic patterns to avoid heavy traffic; determine fares based on distance, number of passengers, or times.
+            li Make change and issue receipts.
+            li Pick up and throw away debris from passengers; take payments; wax and wash exterior of car; service car and determine if repairs are needed.
+          a.button.button-secondary.button-nina(href='#') apply for this position
+        .cell-sm-9.cell-md-5.cell-lg-4
+          .range.range-30
+            .cell-xs-12
+              +jpg('single-job-01-570x380')
+            .cell-xs-12
+              +jpg('single-job-02-570x380')
+  ="\n"
+
+  // Current Opennings
+  section.section.section-lg.text-center.bg-gray-lighter 
+    .shell.shell-wide
+      h3 Current Openings
+      .divider.divider-default
+      .range.range-30.range-center.text-left
+        include ../elements/_openings-1
+  // CTA Gradient
+  section.section.section-xs.text-center.bg-gradient-1
+    .shell-wide
+      .box-cta-thin
+        p.big
+          span We’ll take you wherever you need. Fast. Safe. On time.
+          | &nbsp;
+          a(href='#').link-bold Contact us now!  
+  ="\n"
+
+  +footer-extended({     className: 'bg-gray-darker',     instaType : 'tagged',     tagName : 'bTaxiTM'   })

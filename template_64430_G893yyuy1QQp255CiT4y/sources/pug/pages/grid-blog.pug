@@ -1,0 +1,152 @@
+extends  ../_skeleton
+
+//- Includes
+
+block variables
+  - var activeIndex = 4
+  - var pageName = 'Blog Grid'
+
+block page
+  // Page Header
+  +breadcrumbs-header({ headerClass: 'breadcrumbs-background-03',
+    text: "Our News",
+    path: [[menu[activeIndex].title, menu[activeIndex].link], ['Grid blog']]
+  })
+
+  // Blog
+  section.section.section-xl.bg-gray-lighter
+    
+    .shell.shell-bigger
+      .range.range-ten.range-50.range-sm-90.range-sm-center.range-lg-justify
+        .cell-sm-9.cell-md-7.cell-lg-6.text-center
+          .range.range-30
+            .cell-sm-6: article.post-blog
+              a.post-blog-image(href=postLink)
+                +jpg('grid-blog-1-420x305')
+              .post-blog-caption
+                .post-blog-caption-header
+                  ul.post-blog-tags
+                    li: a(href=postLink).button-tags  taxi
+                  ul.post-blog-meta
+                    li
+                      span by
+                      | &nbsp;
+                      a(href='single-post.html') Ronald Chen
+                .post-blog-caption-body
+                  h5: a(href=postLink).post-blog-title Selecting a Taxi Service: What You Must  Know and Be Aware of
+
+                .post-blog-caption-footer
+                  time(datetime='2017') Feb 27, 2017 at 6:53 pm
+                  a(href=postLink).post-comment
+                    span.icon.icon-md-middle.icon-gray-1.mdi.mdi-comment
+                    span 3
+
+            .cell-sm-6: article.post-blog
+              a(href='image-post.html').post-blog-image
+                +jpg('blog-02-868x640')
+              .post-blog-caption 
+                .post-blog-caption-header
+                  ul.post-blog-tags
+                    li: a(href='image-post.html').button-tags Tips & Tricks
+                  ul.post-blog-meta
+                    li
+                      span by
+                      | &nbsp;
+                      a(href='single-post.html') Ronald Chen
+                .post-blog-caption-body
+                  h5: a(href='image-post.html').post-blog-title Finding Lost Property: How to Quickly Regain Your Belongings
+
+                .post-blog-caption-footer
+                  time(datetime='2017') Feb 27, 2017 at 6:53 pm
+                  a(href='image-post.html').post-comment
+                    span.icon.icon-md-middle.icon-gray-1.mdi.mdi-comment
+                    span 3
+
+            .cell-sm-6: article.post-blog
+              a(href='video-post.html').post-blog-video
+                figure: +jpg('grid-blog-2-420x305')
+                span.icon.mdi.mdi-play-circle-outline
+              .post-blog-caption
+                .post-blog-caption-header
+                  ul.post-blog-tags
+                    li: a(href='video-post.html').button-tags  taxi
+                  ul.post-blog-meta
+                    li
+                      span by
+                      | &nbsp;
+                      a(href='single-post.html') Ronald Chen
+                .post-blog-caption-body
+                  h5: a(href='video-post.html').post-blog-title Luxury Taxi Weekly Digest: New Gadgets & Technologies We Use
+
+                .post-blog-caption-footer
+                  time(datetime='2017') Feb 27, 2017 at 6:53 pm
+                  a(href='video-post.html').post-comment
+                    span.icon.icon-md-middle.icon-gray-1.mdi.mdi-comment
+                    span 3
+
+            .cell-sm-6: article.post-blog
+              a(href=postLink).post-blog-quote
+                p.post-blog-quote-text Taxis and Uber have something in common, yet they are very different.
+              .post-blog-caption
+                .post-blog-caption-header
+                  ul.post-blog-tags
+                    li: a(href=postLink).button-tags Tips & Tricks
+                  ul.post-blog-meta
+                    li
+                      span by
+                      | &nbsp;
+                      a(href='single-post.html') Ronald Chen
+                .post-blog-caption-body
+                  h5: a(href=postLink).post-blog-title Difference Between Uber and Taxis
+
+                .post-blog-caption-footer
+                  time(datetime='2017') Feb 27, 2017 at 6:53 pm
+                  a(href=postLink).post-comment
+                    span.icon.icon-md-middle.icon-gray-1.mdi.mdi-comment
+                    span 3
+
+          a.button.button-default-outline.button-nina.button-block.button-blog(href='#') Load more posts
+          ul.pagination-custom
+            li.active: a(href='#') 1
+            li: a(href='#') 2
+            li: a(href='#') 3
+            li: a(href='#') 4
+
+        .cell-sm-9.cell-md-3.blog-aside
+          .blog-aside-item
+            h6 Search
+            form.rd-search.rd-search-modern(action="search-results.html" method="GET")
+              div.form-wrap
+                input(class="rd-search-input form-input" id="rd-search-input" type="text" name="s" autocomplete="off")
+                label.form-label(for="rd-search-input" class="form-label") Search
+              button.button.mdi.mdi-magnify(type='submit')
+
+          .blog-aside-item
+            h6 Archive
+            ul.list-marked.list-marked-secondary
+              li: a(href='#') January 2017
+              li: a(href='#') February 2017
+              li: a(href='#') March 2017
+              li: a(href='#') April 2017
+              li: a(href='#') May 2017
+
+          .blog-aside-item
+            h6 About us
+            p As a company that operates throughout the USA with a vast and developed partner network, we provide taxicab services in big cities, at many central airports, and other locations. Our service range is constantly developing, and that’s one of the reasons why people love us.
+            a.button.button-xs.button-default-outline.button-nina(href='about-us.html') learn more
+
+          .blog-aside-item
+            h6 categories
+            ul.list-marked.list-marked-secondary
+              li: a(href='#')  Taxi
+              li: a(href='#') Tips & Tricks
+              li: a(href='#') Reviews
+              li: a(href='#') News
+              li: a(href='#')  Events
+  ='\n'
+  
+  // Page Footer
+  +footer-extended({     className: 'bg-gray-darker',     instaType : 'tagged',     tagName : 'bTaxiTM'   })
+
+
+

@@ -1,0 +1,13 @@
+include ../elements/_subscribe-form
+// Modal
+#show-modal.modal.modal-custom.fade(tabindex='-1', role='dialog')
+  .modal-dialog(role='document')
+    .modal-content
+      .modal-header
+        button.close(type='button', data-dismiss='modal', aria-label='Close')
+          span(aria-hidden='true')
+        h4.modal-title newsletter
+      .modal-body
+        p Keep up with our always upcoming product features and technologies.#[br.veil.reveal-sm-inline] Enter your e-mail and subscribe to our newsletter.
+        // Subscribe form
+        +subscribe-form

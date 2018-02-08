@@ -1,0 +1,160 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-style-switcher
+
+block variables
+  - var activeIndex = 2
+  - var pageName = 'Services'
+
+block page
+  // Page Header
+  +breadcrumbs-header({ headerClass: 'breadcrumbs-background-01',
+    text: "What We Do",
+    path: [[menu[activeIndex].title, menu[activeIndex].link], [pageName]]
+  })
+
+  // a few words about us
+  section.section.section-lg.text-center.text-sm-left.bg-gray-lighter
+    .shell.shell-bigger
+      .range.range-ten.range-50.range-sm-center.range-md-middle.range-lg-justify
+        .cell-sm-9.cell-md-5.cell-xl-4.text-gray-light
+          h3 Need a ride? 
+          .divider.divider-default
+          p Wherever you need to go, Luxury Taxi is ready to take you there, day or night. Our fleet of 600 taxis provides service throughout the USA and Europe. Our helpful, friendly drivers are very familiar with the area, so we can handle all your travel needs.
+          article.quote-minimal: p.quote-minimal-text We provide professional and seasoned taxi services  to guests and residents of the USA and Europe.
+          p Whether you are looking for an airport shuttle service or just need a taxi to quickly reach a local destination, our team of dispatchers will find a driver and a taxi for you.
+          a.button.button-secondary.button-nina(href='about-us.html') learn more  
+        .cell-sm-9.cell-md-5
+          include ../elements/_ui-blick-imac
+  ="\n"
+
+  section.section.section-lg.text-center.bg-gray-darker
+    .shell-wide
+      h3 our advantages
+      .divider.divider-default
+      .range.range-50.range-xs-center.text-left
+        .cell-xs-10.cell-sm-6.cell-lg-3
+          article.box-minimal.box-minimal-border
+            .box-minimal-icon.mdi.mdi-road-variant
+            p.big.box-minimal-title Local Routes
+            hr
+            .box-minimal-text Looking for an affordable and easy way to reach another part of the city or state? Don’t worry, we’ve got you covered with our local taxi services.
+
+        .cell-xs-10.cell-sm-6.cell-lg-3
+          article.box-minimal.box-minimal-border
+            .box-minimal-icon.mdi.mdi-map
+            p.big.box-minimal-title Abroad Travels
+            hr
+            .box-minimal-text We provide not only airport transfer services for international travelers but also a wide variety of supplemental taxi services abroad.
+
+        .cell-xs-10.cell-sm-6.cell-lg-3
+          article.box-minimal.box-minimal-border
+            .box-minimal-icon.mdi.mdi-web
+            p.big.box-minimal-title  Business Travels
+            hr
+            .box-minimal-text Our large capacity, timeliness and great reputation make us your ideal partner for professional and comfortable business travel.
+
+        .cell-xs-10.cell-sm-6.cell-lg-3
+          article.box-minimal.box-minimal-border
+            .box-minimal-icon.mdi.mdi-headset
+            p.big.box-minimal-title 24/7 Online Support
+            hr
+            .box-minimal-text We provide a variety of payment methods that include Paypal, Visa/Mastercard/American Express and lots of others, which can be customized.
+  ="\n"
+
+  section.section.section-wrap.section-wrap-equal: .section-wrap-inner
+    .shell.shell-bigger
+      .range.range-ten.range-sm-center.range-md-left.range-lg-justify
+        .cell-sm-8.cell-md-4: .section-lg
+          h3 As-Directed service
+          .divider.divider-default
+          p As flexible at it is reliable, our As-Directed hourly service puts a chauffeur at your disposal for as long as necessary. No destination is required to book it.
+          a.button.button-secondary.button-nina(href='single-service.html') learn more
+
+    .section-wrap-aside.section-wrap-image
+      +jpg('services-1-960x660')
+
+  section.section.section-wrap.section-wrap-equal.section-md-reverse: .section-wrap-inner
+    .shell.shell-bigger
+      .range.range-ten.range-sm-center.range-md-left.range-lg-justify
+        .cell-sm-8.cell-md-4: .section-lg
+          h3 Airport transfer
+          .divider.divider-default
+          p Once you have safely landed and retrieved your luggage, please call us with your confirmation number to notify us of your arrival so that we could arrange your airport transfer.
+          a.button.button-secondary.button-nina(href='single-service.html') learn more
+
+    .section-wrap-aside.section-wrap-image
+      +jpg('services-2-960x660')
+
+  section.section.section-wrap.section-wrap-equal: .section-wrap-inner
+    .shell.shell-bigger
+      .range.range-ten.range-sm-center.range-md-left.range-lg-justify
+        .cell-sm-8.cell-md-4: .section-lg
+          h3 City to City
+          .divider.divider-default
+          p As a luxurious alternative to commercial flights or trains, we will take you from one city to another, offering special flat rates for transfers between cities.
+          a.button.button-secondary.button-nina(href='single-service.html') learn more
+
+    .section-wrap-aside.section-wrap-image
+      +jpg('services-3-960x660')
+
+  section.section.section-wrap.section-wrap-equal.section-md-reverse: .section-wrap-inner
+    .shell.shell-bigger
+      .range.range-ten.range-sm-center.range-md-left.range-lg-justify
+        .cell-sm-8.cell-md-4: .section-lg
+          h3 Chauffeured Tours
+          .divider.divider-default
+          p Explore exotic locales from the comfort of a private luxury vehicle, which allows you to savor each mile in privacy with your choice of amenities.
+          a.button.button-secondary.button-nina(href='single-service.html') learn more
+
+    .section-wrap-aside.section-wrap-image
+      +jpg('services-4-960x660')
+
+  section.section.section-lg.text-center.bg-gray-lighter
+    .shell.shell-wide
+      h3 testimonials
+      .divider.divider-default
+
+      // Owl Carousel
+      .owl-carousel(data-items='1', data-sm-items='2' data-md-items='3' data-lg-items='4' data-dots='true' data-nav='false' data-stage-padding='0', data-loop='true', data-margin='30', data-mouse-drag="false")
+        article.quote-modern
+          .quote-modern-text
+            p Just wanted to say how satisfied I was with the driver James, he was friendly and drove very well. The car was excellent and I will recommend your service. I think every American state needs such taxi service. Thank you!
+          .quote-modern-footer
+            +jpg('quote-user-4-80x80', 'quote-modern-image')
+            .quote-modern-meta
+              p.quote-modern-cite Philip Lawrence
+              p.quote-modern-small Regular Customer
+
+        article.quote-modern
+          .quote-modern-text
+            p I am very apprehensive about taxi rides because I have not had pleasant experiences before. You were different because your driver was friendly and courteous. You provide exceptional taxi services.
+          .quote-modern-footer
+            +jpg('quote-user-5-80x80', 'quote-modern-image')
+            .quote-modern-meta
+              p.quote-modern-cite Debra Ortega
+              p.quote-modern-small Regular Customer
+
+        article.quote-modern
+          .quote-modern-text
+            p I am happy to send you this message! Your dispatcher and the driver went out of their way to help me tonight. I left a cell phone in the taxi and they were able to locate it and returned it. Thank you for your amazing service.
+          .quote-modern-footer
+            +jpg('quote-user-6-80x80', 'quote-modern-image')
+            .quote-modern-meta
+              p.quote-modern-cite Jose Gutierrez
+              p.quote-modern-small Regular Customer
+
+        article.quote-modern
+          .quote-modern-text
+            p You have been providing rides for my son Mitch for the past two years while he attended the university in the southern part of the city. I just wanted to thank all of you for a job well done! Great Service! I will definitely recommend you.
+          .quote-modern-footer
+            +jpg('quote-user-7-80x80', 'quote-modern-image')
+            .quote-modern-meta
+              p.quote-modern-cite Lauren Wilson
+              p.quote-modern-small Regular Customer
+  
+
+  // Page Footer
+  +footer-extended({     className: 'bg-gray-darker',     instaType : 'tagged',     tagName : 'bTaxiTM'   })
+  

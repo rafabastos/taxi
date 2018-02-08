@@ -1,0 +1,311 @@
+//- Instafeed include
+include ../elements/_ui-insta-thumb-big
+include ../elements/_subscribe-form
+include ../elements/_ui-social
+
+
+mixin footer-default(obj)
+  // Footer Default
+  - if (typeof(obj) === 'undefined') var obj = {};
+  footer.section.page-footer.page-footer-default.text-left(class= obj.className)
+    .shell-wide
+      .range.range-50.range-xs-center
+        .cell-sm-6.cell-lg-3
+          .inset-xl
+            h6= obj.title ? obj.title : 'About us'
+            p.text-spacing-sm= obj.content ? obj.content : 'Brave is a multipurpose and robust HTML template built with modularity at the core. Whether you are building a corporate portfolio or a personal website, Brave has all design and functionality that you may need to establish a great web image.'
+
+        .cell-sm-6.cell-lg-2
+          h6 Quick links
+          ul.list-marked.list-marked-primary 
+            li: a(href='about-us.html') About
+            li: a(href='services.html') Services
+            li: a(href='shop-4-columns-layout.html') Shop
+            li: a(href='classic-blog.html') Blog
+            li: a(href='grid-gallery-outside-title.html') Portfolio
+            li: a(href='contacts.html') Contacts
+
+        .cell-sm-6.cell-lg-4
+          h6 Instagram feed
+          if (obj.instaType == 'tagged')
+            .instafeed.text-center(data-instafeed-tagname= obj.tagName ? obj.tagName : 'taxi', data-instafeed-get='tagged', data-instafeed-sort='least-liked' data-lightgallery='group')
+              .range.range-10.range-narrow
+                - for (var i = 0; i < 8 ; i++)
+                  .cell-xxs-6.cell-xs-4.cell-sm-4.cell-md-3(data-instafeed-item='')
+                    +thumbnail-instafeed-big({className: 'thumbnail-instafeed-minimal'})
+          else if (obj.instaType == 'location')
+            .instafeed.text-center(data-instafeed-location= obj.location ? obj.location : '241201111', data-instafeed-get='location', data-instafeed-sort='least-liked' data-lightgallery='group')
+              .range.range-10.range-narrow
+                - for (var i = 0; i < 8 ; i++)
+                  .cell-xxs-6.cell-xs-4.cell-sm-4.cell-md-3(data-instafeed-item='')
+                    +thumbnail-instafeed-big({className: 'thumbnail-instafeed-minimal'})
+          else
+            .instafeed.text-center(data-instafeed-user= obj.userID ? obj.userID : '25025320', data-instafeed-get='user', data-instafeed-sort='least-recent' data-lightgallery='group')
+              .range.range-10.range-narrow 
+                - for (var i = 0; i < 8 ; i++)
+                  .cell-xxs-6.cell-xs-4.cell-sm-4.cell-md-3(data-instafeed-item='')
+                    +thumbnail-instafeed-big({className: 'thumbnail-instafeed-minimal'})
+
+
+        .cell-sm-6.cell-lg-3
+          h6 newsletter
+          p.text-spacing-sm Keep up with our always upcoming product features and technologies. Enter your e-mail and subscribe to our newsletter.
+          +subscribe-form
+
+      p.right &#169;&nbsp;#[span(class="copyright-year")] All Rights Reserved&nbsp;#[a(href="#") Terms of Use]&nbsp;and&nbsp;#[a(href="privacy-policy.html") Privacy Policy]
+      if(footerLink)
+        // {%FOOTER_LINK}
+
+
+mixin footer-minimal(obj)
+  // Footer Minimal 
+  - if (typeof(obj) === 'undefined') var obj = {};
+  footer.section.page-footer.page-footer-minimal.text-center(class= obj.className)
+    .shell.shell-wide
+      .range.range-xs-center.range-sm-middle.range-30
+        .cell-sm-10.cell-md-7.cell-lg-4.text-lg-left
+          a(href='index.html')
+            +png('logo-128x52', 'default-logo')
+            +png(logoInverse, 'inverse-logo')
+        .cell-sm-10.cell-md-7.cell-lg-4
+          p.right &#169;&nbsp;#[span(class="copyright-year")] All Rights Reserved&nbsp;#[a(href="#") Terms of Use]&nbsp;and&nbsp;#[a(href="privacy-policy.html") Privacy Policy]
+          if(footerLink)
+            // {%FOOTER_LINK}
+        .cell-sm-10.cell-md-7.cell-lg-4.text-lg-right
+          ul.group-xs.group-middle
+            li: a.icon.icon-md-middle.icon-circle.icon-secondary-5-filled.mdi.mdi-facebook(href='#')
+            li: a.icon.icon-md-middle.icon-circle.icon-secondary-5-filled.mdi.mdi-twitter(href='#')
+            li: a.icon.icon-md-middle.icon-circle.icon-secondary-5-filled.mdi.mdi-instagram(href='#')
+            li: a.icon.icon-md-middle.icon-circle.icon-secondary-5-filled.mdi.mdi-google(href='#')
+            li: a.icon.icon-md-middle.icon-circle.icon-secondary-5-filled.mdi.mdi-linkedin(href='#')
+
+
+mixin footer-extended(obj)
+  // Footer Extended
+  - if (typeof(obj) === 'undefined') var obj = {};
+  footer.section.page-footer.page-footer-extended.text-center.text-md-left(class= obj.className)
+    .rd-google-map-wrap
+      .rd-google-map.rd-google-map-novi(class="rd-google-map__model", data-zoom='15', data-y='40.643180', data-x='-73.9874068', data-styles='[ { "featureType": "all", "elementType": "labels.text.fill", "stylers": [ { "saturation": 36 }, { "color": "#000000" }, { "lightness": 40 } ] }, { "featureType": "all", "elementType": "labels.text.stroke", "stylers": [ { "visibility": "on" }, { "color": "#000000" }, { "lightness": 16 } ] }, { "featureType": "all", "elementType": "labels.icon", "stylers": [ { "visibility": "off" } ] }, { "featureType": "administrative", "elementType": "geometry.fill", "stylers": [ { "color": "#000000" }, { "lightness": 20 } ] }, { "featureType": "administrative", "elementType": "geometry.stroke", "stylers": [ { "color": "#000000" }, { "lightness": 17 }, { "weight": 1.2 } ] }, { "featureType": "landscape", "elementType": "geometry", "stylers": [ { "color": "#000000" }, { "lightness": 20 } ] }, { "featureType": "poi", "elementType": "geometry", "stylers": [ { "color": "#000000" }, { "lightness": 21 } ] }, { "featureType": "road.highway", "elementType": "geometry.fill", "stylers": [ { "color": "#000000" }, { "lightness": 17 } ] }, { "featureType": "road.highway", "elementType": "geometry.stroke", "stylers": [ { "color": "#000000" }, { "lightness": 29 }, { "weight": 0.2 } ] }, { "featureType": "road.arterial", "elementType": "geometry", "stylers": [ { "color": "#000000" }, { "lightness": 18 } ] }, { "featureType": "road.local", "elementType": "geometry", "stylers": [ { "color": "#000000" }, { "lightness": 16 } ] }, { "featureType": "transit", "elementType": "geometry", "stylers": [ { "color": "#000000" }, { "lightness": 19 } ] }, { "featureType": "water", "elementType": "geometry", "stylers": [ { "color": "#000000" }, { "lightness": 17 } ] } ]')
+        ul.map_locations
+          li(data-y='40.643180', data-x='-73.9874068')
+            p 9870 St Vincent Place, Glasgow, DC 45 Fr 45.
+
+    .shell.shell-wide
+      .range.range-xs-center.range-md-justify.range-lg-right.range-135
+        .cell-sm-8.cell-md-6.cell-lg-5
+          .contact-info-wrap
+            h6 contact information 
+            #tabs-21.tabs-custom.tabs-horizontal.tabs-line.tabs-line-small 
+              // Nav tabs
+              ul.nav.nav-tabs
+                li.active: a(href='#tabs-extended-2-1' data-toggle='tab') San Diego
+                li: a(href='#tabs-extended-2-2' data-toggle='tab') New York
+                li: a(href='#tabs-extended-2-3' data-toggle='tab') Chicago
+              // Tab panes
+              .tab-content
+                div#tabs-extended-2-1.tab-pane.fade.in.active
+                  ul.list-xs.list-darker
+                    li.box-inline
+                      span.icon.icon-md-smaller.icon-primary.mdi.mdi-map-marker
+                      div
+                        a(href='#') 2130 Fulton Street, San Diego, CA 94117-1080 USA
+
+                    li.box-inline
+                      span.icon.icon-md-smaller.icon-primary.mdi.mdi-phone
+                      ul.list-comma
+                        li: a(href='callto:#') 1-800-1234-567
+                        li: a(href='callto:#') 1-800-6780-345
+                    li.box-inline
+                      span.icon.icon-md-smaller.icon-primary.mdi.mdi-email-open
+                      a(href='mailto:#') mail@demolink.org
+
+
+                div#tabs-extended-2-2.tab-pane.fade
+                  ul.list-xs.list-darker
+                    li.box-inline
+                      span.icon.icon-md-smaller.icon-primary.mdi.mdi-map-marker
+                      a(href='#') 2130 Fulton Street, New York, NY 94117-1080 USA
+
+                    li.box-inline
+                      span.icon.icon-md-smaller.icon-primary.mdi.mdi-phone
+                      ul.list-comma
+                        li: a(href='callto:#') 1-800-0987-654
+                        li: a(href='callto:#') 1-800-0987-654
+                    li.box-inline
+                      span.icon.icon-md-smaller.icon-primary.mdi.mdi-email-open
+                      a(href='mailto:#') newyork@demolink.org
+
+                div#tabs-extended-2-3.tab-pane.fade
+                  ul.list-xs.list-darker
+                    li.box-inline
+                      span.icon.icon-md-smaller.icon-primary.mdi.mdi-map-marker
+                      a(href='#') 2130 Fulton Street, Chicago, IL 94117-1080 USA
+
+                    li.box-inline
+                      span.icon.icon-md-smaller.icon-primary.mdi.mdi-phone
+                      ul.list-comma
+                        li: a(href='callto:#') 1-800-6543-765
+                        li: a(href='callto:#') 1-800-3434-876
+                    li.box-inline
+                      span.icon.icon-md-smaller.icon-primary.mdi.mdi-email-open
+                      a(href='mailto:#') chicago@demolink.org
+            h6 Instagram feed
+            if (obj.instaType == 'tagged')
+              .instafeed.text-center(data-instafeed-tagname= obj.tagName ? obj.tagName : 'taxi', data-instafeed-get='tagged', data-instafeed-sort='least-liked' data-lightgallery='group')
+                .range.range-narrow.range-10
+                  - for (var i = 0; i < 4 ; i++)
+                    .cell-xs-3.cell-xxs-4(data-instafeed-item='')
+                      +thumbnail-instafeed-big({className: 'thumbnail-instafeed-minimal'})
+            else if (obj.instaType == 'location')
+              .instafeed.text-center(data-instafeed-location= obj.location ? obj.location : '241201111', data-instafeed-get='location', data-instafeed-sort='least-liked' data-lightgallery='group')
+                .range.range-narrow.range-10
+                  - for (var i = 0; i < 4 ; i++)
+                    .cell-xs-3.cell-xxs-4(data-instafeed-item='')
+                      +thumbnail-instafeed-big({className: 'thumbnail-instafeed-minimal'})
+            else
+              .instafeed.text-center(data-instafeed-user= obj.userID ? obj.userID : '25025320', data-instafeed-get='user', data-instafeed-sort='least-recent' data-lightgallery='group')
+                .range.range-narrow.range-10
+                  - for (var i = 0; i < 4 ; i++)
+                    .cell-xs-3.cell-xxs-4(data-instafeed-item='')
+                      +thumbnail-instafeed-big({className: 'thumbnail-instafeed-minimal'})
+
+        .cell-sm-8.cell-md-5.cell-lg-3
+          h6 recent blog posts
+          .blog-inline-wrap
+            // Blog Inline
+            article.blog-inline
+              .blog-inline-title
+                a(href='single-post.html') How to Quickly Improve Cash Flow of Your Taxi Business
+              ul.blog-inline-meta
+                li: a(href='single-post.html')  2 days ago
+                li by
+                  | &nbsp;
+                  a.text-normal(href='single-post.html') Ronald Chen
+
+            // Blog Inline
+            article.blog-inline
+              .blog-inline-title
+                a(href='single-post.html') When You Run a Taxi Company, You Can Only Expect What You Inspect
+              ul.blog-inline-meta
+                li: a(href='single-post.html')  2 days ago
+                li by
+                  | &nbsp;
+                  a.text-normal(href='single-post.html') Ronald Chen
+
+            // Blog Inline
+            article.blog-inline
+              .blog-inline-title
+                a(href='single-post.html') Preventing a Negative Word of Mouth Marketing
+              ul.blog-inline-meta
+                li: a(href='single-post.html')  2 days ago
+                li by
+                  | &nbsp;
+                  a.text-normal(href='single-post.html') Ronald Chen
+
+            // Blog Inline
+            article.blog-inline
+              .blog-inline-title
+                a(href='single-post.html') Top 10 Most Popular Cars Used by Modern Taxi Companies
+              ul.blog-inline-meta
+                li: a(href='single-post.html')  2 days ago
+                li by
+                  | &nbsp;
+                  a.text-normal(href='single-post.html') Ronald Chen
+
+        .cell-lg-8
+          .range.range-md-reverse.range-xs-center.range-md-middle.range-135.range-lg-left
+            .cell-sm-10.cell-md-5.cell-lg-5.cell-xl-5.text-center
+              ul.group-xs.group-middle.social-icons-list
+                li: a.icon.icon-md-smaller.icon-circle.icon-secondary-5-filled.mdi.mdi-facebook(href='#')
+                li: a.icon.icon-md-smaller.icon-circle.icon-secondary-5-filled.mdi.mdi-twitter(href='#')
+                li: a.icon.icon-md-smaller.icon-circle.icon-secondary-5-filled.mdi.mdi-instagram(href='#')
+                li: a.icon.icon-md-smaller.icon-circle.icon-secondary-5-filled.mdi.mdi-google(href='#')
+                li: a.icon.icon-md-smaller.icon-circle.icon-secondary-5-filled.mdi.mdi-linkedin(href='#')
+            .cell-sm-10.cell-md-7.cell-lg-7.cell-xl-6
+              p.right &#169;&nbsp;#[span(class="copyright-year")] All Rights Reserved&nbsp;#[a(href="#") Terms of Use]&nbsp;and&nbsp;#[a(href="privacy-policy.html") Privacy Policy]
+              if(footerLink)
+                // {%FOOTER_LINK}
+
+
+mixin footer-alternative(obj)
+  // Footer Alternative
+  - if (typeof(obj) === 'undefined') var obj = {};
+  footer.section.page-footer.page-footer-alternative(class= obj.className)
+    .shell-wide
+      .range.range-50.range-xs-center.range-lg-justify
+        .cell-sm-6.cell-lg-3
+          h6 Twitter feed
+          +twitter-minimal({
+            countTwit: '2'
+          })
+
+        .cell-sm-6.cell-lg-3
+          h6 Instagram feed
+
+          if (obj.instaType == 'tagged')
+            .instafeed.text-center(data-instafeed-tagname= obj.tagName ? obj.tagName : 'taxi', data-instafeed-get='tagged', data-instafeed-sort='least-liked' data-lightgallery='group')
+              .range.range-10.range-narrow
+                - for (var i = 0; i < 6 ; i++)
+                  .cell-xxs-4(data-instafeed-item='')
+                    +thumbnail-instafeed-big({className: 'thumbnail-instafeed-minimal'})
+          else if (obj.instaType == 'location')
+            .instafeed.text-center(data-instafeed-location= obj.location ? obj.location : '241201111', data-instafeed-get='location', data-instafeed-sort='least-liked' data-lightgallery='group')
+              .range.range-10.range-narrow
+                - for (var i = 0; i < 6 ; i++)
+                  .cell-xxs-4(data-instafeed-item='')
+                    +thumbnail-instafeed-big({className: 'thumbnail-instafeed-minimal'})
+          else
+            .instafeed.text-center(data-instafeed-user= obj.userID ? obj.userID : '25025320', data-instafeed-get='user', data-instafeed-sort='least-recent' data-lightgallery='group')
+              .range.range-10.range-narrow
+                - for (var i = 0; i < 6 ; i++)
+                  .cell-xxs-4(data-instafeed-item='')
+                    +thumbnail-instafeed-big({className: 'thumbnail-instafeed-minimal'})
+
+        .cell-sm-6.cell-lg-3
+          h6 Contact US
+          ul.list-xs.list-darker
+            li.box-inline
+              span.icon.icon-md-smaller.icon-primary.mdi.mdi-map-marker
+              div
+                a(href='#') 2130 Fulton Street, Chicago,
+                  br.veil.reveal-xl-block
+                  | &nbsp;
+                  | IL 94117-1080 USA
+
+            li.box-inline
+              span.icon.icon-md-smaller.icon-primary.mdi.mdi-phone
+              ul.list-comma
+                li: a(href='callto:#') 1-800-1234-567
+                li: a(href='callto:#') 1-800-6780-345
+            li.box-inline
+              span.icon.icon-md-smaller.icon-primary.mdi.mdi-email-open
+              a(href='mailto:#') mail@demolink.org
+          ul.page-footer-icon-list.social-icons-list
+            li: a.icon.icon-sm-bigger.icon-gray-light.mdi.mdi-facebook(href='#')
+            li: a.icon.icon-sm-bigger.icon-gray-light.mdi.mdi-twitter(href='#')
+            li: a.icon.icon-sm-bigger.icon-gray-light.mdi.mdi-instagram(href='#')
+            li: a.icon.icon-sm-bigger.icon-gray-light.mdi.mdi-google(href='#')
+            li: a.icon.icon-sm-bigger.icon-gray-light.mdi.mdi-linkedin(href='#')
+
+
+
+        .cell-sm-6.cell-lg-3
+          h6 Newsletter
+          p.text-spacing-sm Keep up with our always upcoming product features and technologies. Enter your e-mail and subscribe to our newsletter.
+          +subscribe-form
+
+      .divider-xl
+      .range.range-xs-middle.range-30.text-left
+        .cell-lg-6.text-lg-left
+          ul.page-footer-inline-list
+            li: a(href='about-us.html') About
+            li: a(href='services.html') Services
+            li: a(href='shop-4-columns-layout.html') Shop
+            li: a(href='classic-blog.html') Blog
+            li: a(href='grid-gallery-outside-title.html') Portfolio
+            li: a(href='contacts.html') Contacts
+        .cell-lg-6.text-lg-right
+          p.right &#169;&nbsp;#[span(class="copyright-year")] All Rights Reserved&nbsp;#[a(href="#") Terms of Use]&nbsp;and&nbsp;#[a(href="privacy-policy.html") Privacy Policy]
+          if(footerLink)
+            // {%FOOTER_LINK}
+

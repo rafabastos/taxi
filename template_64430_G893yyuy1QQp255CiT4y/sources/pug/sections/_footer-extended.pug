@@ -1,0 +1,147 @@
+// Footer Extended
+footer.section.page-footer.page-footer-extended.text-center.text-md-left
+  .rd-google-map-wrap
+    .rd-google-map.rd-google-map-novi(class="rd-google-map__model", data-zoom='15', data-y='40.643180', data-x='-73.9874068', data-styles='[ { "featureType": "all", "elementType": "labels.text.fill", "stylers": [ { "saturation": 36 }, { "color": "#000000" }, { "lightness": 40 } ] }, { "featureType": "all", "elementType": "labels.text.stroke", "stylers": [ { "visibility": "on" }, { "color": "#000000" }, { "lightness": 16 } ] }, { "featureType": "all", "elementType": "labels.icon", "stylers": [ { "visibility": "off" } ] }, { "featureType": "administrative", "elementType": "geometry.fill", "stylers": [ { "color": "#000000" }, { "lightness": 20 } ] }, { "featureType": "administrative", "elementType": "geometry.stroke", "stylers": [ { "color": "#000000" }, { "lightness": 17 }, { "weight": 1.2 } ] }, { "featureType": "landscape", "elementType": "geometry", "stylers": [ { "color": "#000000" }, { "lightness": 20 } ] }, { "featureType": "poi", "elementType": "geometry", "stylers": [ { "color": "#000000" }, { "lightness": 21 } ] }, { "featureType": "road.highway", "elementType": "geometry.fill", "stylers": [ { "color": "#000000" }, { "lightness": 17 } ] }, { "featureType": "road.highway", "elementType": "geometry.stroke", "stylers": [ { "color": "#000000" }, { "lightness": 29 }, { "weight": 0.2 } ] }, { "featureType": "road.arterial", "elementType": "geometry", "stylers": [ { "color": "#000000" }, { "lightness": 18 } ] }, { "featureType": "road.local", "elementType": "geometry", "stylers": [ { "color": "#000000" }, { "lightness": 16 } ] }, { "featureType": "transit", "elementType": "geometry", "stylers": [ { "color": "#000000" }, { "lightness": 19 } ] }, { "featureType": "water", "elementType": "geometry", "stylers": [ { "color": "#000000" }, { "lightness": 17 } ] } ]')
+      ul.map_locations
+        li(data-y='40.643180', data-x='-73.9874068')
+          p
+            | 9870 St Vincent Place, Glasgow, DC 45 Fr 45.
+
+  .shell.shell-wide
+    .range.range-xs-center.range-md-justify.range-lg-right.range-135
+      .cell-sm-8.cell-md-6.cell-lg-5
+        .contact-info-wrap
+          h6 contact information
+          #tabs-2.tabs-custom.tabs-horizontal.tabs-line.tabs-line-small
+            // Nav tabs
+            ul.nav.nav-tabs
+              li.active: a(href='#tabs-extended-2-1' data-toggle='tab') San Diego
+              li: a(href='#tabs-extended-2-2' data-toggle='tab') New York
+              li: a(href='#tabs-extended-2-3' data-toggle='tab') Chicago
+            // Tab panes
+            .tab-content
+              div#tabs-extended-2-1.tab-pane.fade.in.active
+                ul.list-xs.list-darker
+                  li.box-inline
+                    span.icon.icon-md-smaller.icon-primary.mdi.mdi-map-marker
+                    a(href='#') 2130 Fulton Street, San Diego, CA 94117-1080 USA
+
+                  li.box-inline
+                    span.icon.icon-md-smaller.icon-primary.mdi.mdi-phone
+                    ul.list-comma
+                      li: a(href='callto:#') 1-800-1234-567
+                      li: a(href='callto:#') 1-800-6780-345
+                  li.box-inline
+                    span.icon.icon-md-smaller.icon-primary.mdi.mdi-email-open
+                    a(href='mailto:#') mail@demolink.org
+
+
+              div#tabs-extended-2-2.tab-pane.fade
+                ul.list-xs.list-darker
+                  li.box-inline
+                    span.icon.icon-md-smaller.icon-primary.mdi.mdi-map-marker
+                    a(href='#') 2130 Fulton Street, New York, NY 94117-1080 USA
+
+                  li.box-inline
+                    span.icon.icon-md-smaller.icon-primary.mdi.mdi-phone
+                    ul.list-comma
+                      li: a(href='callto:#') 1-800-0987-654
+                      li: a(href='callto:#') 1-800-0987-654
+                  li.box-inline
+                    span.icon.icon-md-smaller.icon-primary.mdi.mdi-email-open
+                    a(href='mailto:#') newyork@demolink.org
+
+              div#tabs-extended-2-3.tab-pane.fade
+                ul.list-xs.list-darker
+                  li.box-inline
+                    span.icon.icon-md-smaller.icon-primary.mdi.mdi-map-marker
+                    a(href='#') 2130 Fulton Street, Chicago, IL 94117-1080 USA
+
+                  li.box-inline
+                    span.icon.icon-md-smaller.icon-primary.mdi.mdi-phone
+                    ul.list-comma
+                      li: a(href='callto:#') 1-800-6543-765
+                      li: a(href='callto:#') 1-800-3434-876
+                  li.box-inline
+                    span.icon.icon-md-smaller.icon-primary.mdi.mdi-email-open
+                    a(href='mailto:#') chicago@demolink.org
+          h6 flickr feed
+          .flickr(data-flickr-tags='tm-62314', data-lightgallery='group')
+            .range.range-narrow.range-10
+              - for (var i = 0; i < 4 ; i++)
+                .cell-xs-3.cell-xxs-4
+                  .flickr-item(data-type="flickr-item")
+                    a.thumb-minimal(href='#', data-image_b="href", data-lightgallery='group-item')
+                      img(src='images/_blank.png', data-image_s="src" data-title="alt", width='110', height='110', alt='')
+                      .thumb-minimal-overlay
+
+      .cell-sm-8.cell-md-5.cell-lg-3
+        h6 recent blog posts
+        // Blog Inline
+        article.blog-inline
+          .blog-inline-title
+            a(href=blogLink) Selecting a Taxi Service: What You Must  Know and Be Aware of
+          ul.blog-inline-meta
+            li: a(href=blogLink)  2 days ago
+            li by
+              | &nbsp;
+              a.text-normal(href=blogLink) Ronald Chen
+
+        // Blog Inline
+        article.blog-inline
+          .blog-inline-title
+            a(href=blogLink) Finding Lost Property: How to Quickly Regain Your Belongings
+          ul.blog-inline-meta
+            li: a(href=blogLink)  2 days ago
+            li by
+              | &nbsp;
+              a.text-normal(href=blogLink) Ronald Chen
+
+        // Blog Inline
+        article.blog-inline
+          .blog-inline-title
+            a(href=blogLink) Think You’re Too Old to Be an Entrepreneur? Think Again.
+          ul.blog-inline-meta
+            li: a(href=blogLink)  2 days ago
+            li by
+              | &nbsp;
+              a.text-normal(href=blogLink) Ronald Chen
+
+        // Blog Inline
+        article.blog-inline
+          .blog-inline-title
+            a(href=blogLink) Why Google Doesn’t Care About College Degrees
+          ul.blog-inline-meta
+            li: a(href=blogLink)  2 days ago
+            li by
+              | &nbsp;
+              a.text-normal(href=blogLink) Ronald Chen
+
+      .cell-lg-8
+        .range.range-md-reverse.range-xs-center.range-md-middle.range-135.range-lg-left
+          .cell-sm-10.cell-md-5.cell-lg-5.cell-xl-5.text-center
+            ul.group-xs.group-middle
+              li: a.icon.icon-md-smaller.icon-circle.icon-secondary-5-filled.fa.fa-facebook(href='#')
+              li: a.icon.icon-md-smaller.icon-circle.icon-secondary-5-filled.fa.fa-twitter(href='#')
+              li: a.icon.icon-md-smaller.icon-circle.icon-secondary-5-filled.fa.fa-instagram(href='#')
+              li: a.icon.icon-md-smaller.icon-circle.icon-secondary-5-filled.fa.fa-google(href='#')
+              li: a.icon.icon-md-smaller.icon-circle.icon-secondary-5-filled.fa.fa-linkedin(href='#')
+          .cell-sm-10.cell-md-7.cell-lg-7.cell-xl-6
+            p.right
+              | &#169; #[span(class="copyright-year")] All Rights Reserved
+              | &nbsp;
+              a(href="#") Terms of Use
+              | &nbsp;
+              span and
+              | &nbsp;
+              a(href="privacy.html") Privacy Policy
+            if(footerLink)
+              // {%FOOTER_LINK}
+
+
+
+
+
+
+
+

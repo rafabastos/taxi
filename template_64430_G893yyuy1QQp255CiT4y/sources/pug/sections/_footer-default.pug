@@ -1,0 +1,50 @@
+//- Instafeed include
+include ../elements/_ui-insta-thumb-big
+footer.section.page-footer.page-footer-default
+  .shell-wide
+    .range.range-50.range-xs-center
+      .cell-sm-6.cell-lg-3
+        .inset-xl
+          h6 about us
+          p.text-spacing-sm Brave is a multipurpose and robust HTML template built with modularity at the core. Whether you are building a corporate portfolio or a personal website, Brave has all design and functionality that you may need to establish a great web image.
+
+      .cell-sm-6.cell-lg-2
+        h6 Quick links
+        ul.list-marked.list-marked-primary.list-novi
+          li: a(href='about.html') About
+          li: a(href='services.html') Services
+          li: a(href='shop-4-columns-layout.html') Shop
+          li: a(href='classic-blog.html') Blog
+          li: a(href='grid-gallery-outside-title.html') Portfolio
+          li: a(href='contacts.html') Contacts
+
+      .cell-sm-6.cell-lg-4
+        h6 Instagram feed
+        .instafeed.text-center(data-instafeed-user='25025320', data-instafeed-get='user', data-instafeed-sort='most-liked' data-lightgallery='group')
+          .range.range-10.range-narrow
+            - for (var i = 0; i < 8 ; i++)
+              .cell-xxs-6.cell-xs-4.cell-sm-4.cell-md-3(data-instafeed-item='')
+                +thumbnail-instafeed-big({className: 'thumbnail-instafeed-minimal'})
+
+      .cell-sm-6.cell-lg-3
+        h6 newsletter
+        p.text-spacing-sm Keep up with our always upcoming product features and technologies. Enter your e-mail and subscribe to our newsletter.
+        form.campaign-mailform.rd-mailform-inline.rd-mailform-sm.text-left(data-form-output="form-output-global", action='http://templatemonster1.createsend.com/t/d/s/xlyhhk/' method='post')
+          .form-wrap
+            input#footer-default-newsletter.form-input(type="email" name='cm-xlyhhk-xlyhhk' data-constraints="@Email @Required")
+            label.form-label(for="footer-default-newsletter") Enter your e-mail
+          button.button.form-button.button-sm.button-secondary.button-nina(type="submit") subscribe
+
+    p.right
+      | &#169; #[span(class="copyright-year")] All Rights Reserved
+      | &nbsp;
+      a(href="#") Terms of Use
+      | &nbsp;
+      span and
+      | &nbsp;
+      a(href="privacy.html") Privacy Policy
+    if(footerLink)
+      // {%FOOTER_LINK}
+
+
+

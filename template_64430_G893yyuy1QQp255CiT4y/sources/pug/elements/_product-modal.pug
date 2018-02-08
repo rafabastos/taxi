@@ -1,0 +1,16 @@
+// Modal
+#product-modal.modal.modal-custom.modal-product.fade(tabindex='-1', role='dialog')
+  .modal-dialog(role='document')
+    .modal-content
+      .modal-header
+        button.close(type='button', data-dismiss='modal', aria-label='Close')
+          span(aria-hidden='true')
+      .modal-body
+        a(href=productSingle).modal-product-image
+          +jpg('product-modal-01-318x416')
+        .modal-body-inner.text-left
+          h5: a(href=productSingle).modal-title Immutable Laws of Marketing
+          hr.divider.divider-sm.divider-left.divider-default
+          p This book offers a compendium of more than twenty innovative rules for understanding the international marketplace.
+          p.modal-price $29.00
+          a(href=productSingle).button.button-secondary.button-nina add to cart
